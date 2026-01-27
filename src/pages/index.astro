@@ -1,17 +1,44 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
+<Layout title="Iluminando México">
+  <!-- Hero principal -->
+  <section class="text-center py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+    <h1 class="text-5xl font-bold mb-4">Ilumexa - Iluminando México</h1>
+    <p class="text-lg mb-6">
+      Soluciones de iluminación pública, industrial, residencial y decorativa con marcas líderes.
+    </p>
+    <a href="/products" class="px-6 py-3 bg-white text-blue-700 font-semibold rounded shadow hover:bg-gray-200">
+      Ver productos
+    </a>
+  </section>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <!-- Carrusel de logos -->
+  <section class="py-12 bg-gray-100 dark:bg-gray-900">
+    <h2 class="text-3xl font-bold text-center mb-8">Marcas aliadas</h2>
+    <div class="overflow-hidden relative">
+      <div id="logo-carousel" class="flex space-x-12 animate-scroll">
+        <img src="/images/tork.png" alt="Tork" class="h-16" />
+        <img src="/images/osram.png" alt="OSRAM" class="h-16" />
+        <img src="/images/forlexa.jpg" alt="forlexa" class="h-16" />
+        <img src="/images/philips.png" alt="Philips" class="h-16" />
+        <img src="/images/tecnolight.png" alt="Tecno Light" class="h-16" />
+        <img src="/images/amg.png" alt="AMG" class="h-16" />
+        <img src="/images/forlighting.png" alt="Forlighting" class="h-16" />
+        <img src="/images/luma.jpg" alt="Luma" class="h-16" />
+        <img src="/images/lumicom.png" alt="Lumicom" class="h-16" />
+        <img src="/images/magg.png" alt="MAGG" class="h-16" />
+        <img src="/images/sola-basic.png" alt="Sola Basic" class="h-16" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de llamada a la acción -->
+  <section class="py-20 text-center">
+    <h2 class="text-3xl font-bold mb-4">Ilumina tus proyectos con nosotros</h2>
+    <p class="mb-6">Contáctanos para recibir asesoría personalizada en iluminación eficiente y moderna.</p>
+    <a href="/contact" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded shadow hover:bg-blue-700">
+      Contáctanos
+    </a>
+  </section>
+</Layout>

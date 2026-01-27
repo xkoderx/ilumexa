@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Contacto">
+  <h2 class="text-3xl font-bold mb-6">Contáctanos</h2>
+  <form class="max-w-lg mx-auto bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 space-y-4">
+    <div>
+      <label for="name" class="block mb-2 font-semibold">Nombre</label>
+      <input id="name" type="text" placeholder="Tu nombre"
+        class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:border-gray-600" />
+    </div>
+    <div>
+      <label for="email" class="block mb-2 font-semibold">Correo electrónico</label>
+      <input id="email" type="email" placeholder="tu@email.com"
+        class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:border-gray-600" />
+    </div>
+    <div>
+      <label for="message" class="block mb-2 font-semibold">Mensaje</label>
+      <textarea id="message" rows="4" placeholder="Escribe tu mensaje..."
+        class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:border-gray-600"></textarea>
+    </div>
+    <button type="submit"
+      class="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+      Enviar
+    </button>
+  </form>
+</Layout>
