@@ -3,64 +3,94 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Contacto">
-  <h2 class="text-3xl font-bold mb-6">Contáctanos</h2>
-
-  <div class="max-w-lg mx-auto bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 mb-8">
-    <h3 class="text-xl font-semibold mb-4">Ubicación</h3>
-    <p class="mb-4">
-      Raymundo Montoya Mz. 22 Lt. 7, Col. Benito Juárez, C.P. 08930,
-      Iztacalco, México D.F.
+  <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-24">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-green-600 dark:text-brand-green-400">
+      Escríbenos
     </p>
-    <h3 class="text-xl font-semibold mb-4">Contacto</h3>
-    <ul class="list-disc list-inside mb-4 space-y-1">
-      <li>Guillermina Osorno</li>
-      <li>Efraín Quintero</li>
-    </ul>
-    <h3 class="text-xl font-semibold mb-4">Correos</h3>
-    <ul class="list-disc list-inside space-y-1">
-      <li>
-        <a
-          href="mailto:gop_ilumex@hotmail.com"
-          class="text-blue-600 hover:underline"
-        >
-          gop_ilumex@hotmail.com
-        </a>
-      </li>
-      <li>
-        <a
-          href="mailto:gop.ilumex@gmail.com"
-          class="text-blue-600 hover:underline"
-        >
-          gop.ilumex@gmail.com
-        </a>
-      </li>
-    </ul>
+    <h2 class="mt-2 text-3xl font-bold tracking-tight text-royal-950 dark:text-white md:text-4xl">
+      Contáctanos
+    </h2>
+    <div class="mt-3 h-1 w-16 rounded-full bg-brand-green-400"></div>
+    <p class="mt-4 max-w-2xl text-lg text-slate-600 dark:text-slate-400">
+      Cuéntanos tu proyecto y te asesoramos en iluminación eficiente y moderna.
+    </p>
+
+    <div class="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-5">
+      <div class="rounded-2xl bg-royal-900 p-8 text-white shadow-lg lg:col-span-2">
+        <h3 class="text-xl font-semibold">Ubicación</h3>
+        <p class="mt-3 leading-relaxed text-royal-100">
+          Raymundo Montoya Mz. 22 Lt. 7, Col. Benito Juárez, C.P. 08930,
+          Iztacalco, México D.F.
+        </p>
+        <h3 class="mt-8 text-xl font-semibold">Contacto</h3>
+        <ul class="mt-3 list-disc list-inside space-y-1 text-royal-100">
+          <li>Guillermina Osorno</li>
+          <li>Efraín Quintero</li>
+        </ul>
+        <h3 class="mt-8 text-xl font-semibold">Correos</h3>
+        <ul class="mt-3 space-y-1">
+          <li>
+            <a
+              href="mailto:gop_ilumex@hotmail.com"
+              class="font-medium text-brand-green-300 hover:underline"
+            >
+              gop_ilumex@hotmail.com
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:gop.ilumex@gmail.com"
+              class="font-medium text-brand-green-300 hover:underline"
+            >
+              gop.ilumex@gmail.com
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900 lg:col-span-3">
+        <p class="mb-6 text-slate-600 dark:text-slate-400">
+          Al enviar, se abrirá tu correo con el mensaje ya redactado para Ilumexa.
+        </p>
+
+        <form id="contact-form" class="space-y-4">
+          <div>
+            <label for="name" class="block mb-2 font-semibold text-royal-950 dark:text-white">Nombre</label>
+            <input id="name" type="text" placeholder="Tu nombre"
+              class="w-full rounded-xl border border-slate-300 px-4 py-2.5 transition focus:border-royal-500 focus:outline-none focus:ring-2 focus:ring-royal-200 dark:border-slate-700 dark:bg-slate-800" />
+          </div>
+          <div>
+            <label for="email" class="block mb-2 font-semibold text-royal-950 dark:text-white">Correo electrónico</label>
+            <input id="email" type="email" placeholder="tu@email.com"
+              class="w-full rounded-xl border border-slate-300 px-4 py-2.5 transition focus:border-royal-500 focus:outline-none focus:ring-2 focus:ring-royal-200 dark:border-slate-700 dark:bg-slate-800" />
+          </div>
+          <div>
+            <label for="message" class="block mb-2 font-semibold text-royal-950 dark:text-white">Mensaje</label>
+            <textarea id="message" rows="4" placeholder="Escribe tu mensaje..."
+              class="w-full rounded-xl border border-slate-300 px-4 py-2.5 transition focus:border-royal-500 focus:outline-none focus:ring-2 focus:ring-royal-200 dark:border-slate-700 dark:bg-slate-800"></textarea>
+          </div>
+          <button type="submit"
+            class="w-full rounded-full bg-royal-700 px-4 py-3 font-semibold text-white shadow-md transition hover:bg-royal-800">
+            Enviar
+          </button>
+        </form>
+
+        <script>
+          const form = document.getElementById('contact-form');
+          form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const subject = encodeURIComponent(`Contacto Ilumexa - ${name}`);
+            const body = encodeURIComponent(
+              `Nombre: ${name}\nCorreo: ${email}\n\n${message}`
+            );
+            window.location.href =
+              `mailto:gop.ilumex@gmail.com?cc=gop_ilumex@hotmail.com&subject=${subject}&body=${body}`;
+          });
+        </script>
+      </div>
+    </div>
   </div>
-
-  <p class="max-w-lg mx-auto mb-4 text-gray-700 dark:text-gray-300">
-    El formulario de abajo aún no envía mensajes: todavía no tiene backend.
-    Para contactar a Ilumexa, usa los correos o la dirección de arriba.
-  </p>
-
-  <form class="max-w-lg mx-auto bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 space-y-4">
-    <div>
-      <label for="name" class="block mb-2 font-semibold">Nombre</label>
-      <input id="name" type="text" placeholder="Tu nombre"
-        class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:border-gray-600" />
-    </div>
-    <div>
-      <label for="email" class="block mb-2 font-semibold">Correo electrónico</label>
-      <input id="email" type="email" placeholder="tu@email.com"
-        class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:border-gray-600" />
-    </div>
-    <div>
-      <label for="message" class="block mb-2 font-semibold">Mensaje</label>
-      <textarea id="message" rows="4" placeholder="Escribe tu mensaje..."
-        class="w-full px-3 py-2 border rounded dark:bg-gray-700 dark:border-gray-600"></textarea>
-    </div>
-    <button type="submit"
-      class="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-      Enviar
-    </button>
-  </form>
 </Layout>

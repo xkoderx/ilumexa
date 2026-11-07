@@ -2,43 +2,144 @@
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="Iluminando México">
-  <!-- Hero principal -->
-  <section class="text-center py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-    <h1 class="text-5xl font-bold mb-4">Ilumexa - Iluminando México</h1>
-    <p class="text-lg mb-6">
-      Soluciones de iluminación pública, industrial, residencial y decorativa con marcas líderes.
-    </p>
-    <a href="/products" class="px-6 py-3 bg-white text-blue-700 font-semibold rounded shadow hover:bg-gray-200">
-      Ver productos
-    </a>
-  </section>
-
-  <!-- Carrusel de logos -->
-  <section class="py-12 bg-gray-100 dark:bg-gray-900">
-    <h2 class="text-3xl font-bold text-center mb-8">Marcas aliadas</h2>
-    <div class="overflow-hidden relative">
-      <div id="logo-carousel" class="flex space-x-12 animate-scroll">
-        <img src="/images/tork.png" alt="Tork" class="h-16" />
-        <img src="/images/osram.png" alt="OSRAM" class="h-16" />
-        <img src="/images/forlexa.jpg" alt="forlexa" class="h-16" />
-        <img src="/images/philips.png" alt="Philips" class="h-16" />
-        <img src="/images/tecnolight.png" alt="Tecno Light" class="h-16" />
-        <img src="/images/amg.png" alt="AMG" class="h-16" />
-        <img src="/images/forlighting.png" alt="Forlighting" class="h-16" />
-        <img src="/images/luma.jpg" alt="Luma" class="h-16" />
-        <img src="/images/lumicom.png" alt="Lumicom" class="h-16" />
-        <img src="/images/magg.png" alt="MAGG" class="h-16" />
-        <img src="/images/sola-basic.png" alt="Sola Basic" class="h-16" />
+  <!-- Hero principal: slider de una sola imagen.
+       Foto verificada del sitio oficial (images/4a.png): alumbrado
+       público nocturno en una avenida, 500x250 px. Es el único slide:
+       no se inventaron más fotos ni hay rotación automática.
+       El degradado azul rey encima es para que el texto se lea bien. -->
+  <section
+    class="relative w-full overflow-hidden"
+    role="region"
+    aria-roledescription="carrusel"
+    aria-label="Ilumexa - Iluminando México"
+  >
+    <div class="relative h-[45vh] min-h-[380px] w-full md:h-[60vh] lg:h-[70vh]">
+      <div class="absolute inset-0">
+        <img
+          src="/images/calle-iluminada.jpg"
+          alt="Avenida iluminada de noche con alumbrado público de Ilumexa"
+          class="h-full w-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-royal-950/90 via-royal-900/70 to-royal-900/30"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-royal-950/80 via-transparent to-royal-950/40"></div>
+      </div>
+      <div class="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-center px-4 sm:px-6">
+        <p class="mb-5 inline-block w-fit rounded-full border border-brand-green-300/50 bg-royal-950/50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-brand-green-300">
+          Iluminando a México e Innovando
+        </p>
+        <h1 class="max-w-2xl text-5xl font-extrabold leading-tight tracking-tight text-white drop-shadow-lg md:text-6xl">
+          Ilumexa
+        </h1>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-royal-100 drop-shadow md:text-xl">
+          Soluciones de iluminación pública, industrial, residencial y
+          decorativa con marcas líderes.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a
+            href="/products"
+            class="rounded-full bg-white px-7 py-3 text-center font-semibold text-royal-800 shadow-lg transition hover:bg-brand-green-100"
+          >
+            Ver productos
+          </a>
+          <a
+            href="/contact"
+            class="rounded-full border border-white/60 px-7 py-3 text-center font-semibold text-white transition hover:bg-white/10"
+          >
+            Contáctanos
+          </a>
+        </div>
+      </div>
+      <!-- Indicador del slider (un solo slide) -->
+      <div class="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 gap-2" aria-hidden="true">
+        <span class="h-2 w-8 rounded-full bg-brand-green-400"></span>
       </div>
     </div>
   </section>
 
-  <!-- Sección de llamada a la acción -->
-  <section class="py-20 text-center">
-    <h2 class="text-3xl font-bold mb-4">Ilumina tus proyectos con nosotros</h2>
-    <p class="mb-6">Contáctanos para recibir asesoría personalizada en iluminación eficiente y moderna.</p>
-    <a href="/contact" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded shadow hover:bg-blue-700">
-      Contáctanos
-    </a>
+  <!-- Video de Ilumexa -->
+  <section class="mx-auto max-w-4xl px-4 py-20 sm:px-6 md:py-24">
+    <p class="mb-2 text-center text-xs font-semibold uppercase tracking-[0.2em] text-brand-green-600 dark:text-brand-green-400">
+      Conoce Ilumexa
+    </p>
+    <h2 class="text-center text-3xl font-bold tracking-tight text-royal-950 dark:text-white md:text-4xl">
+      Ilumexa en video
+    </h2>
+    <div class="mx-auto mt-3 h-1 w-16 rounded-full bg-brand-green-400"></div>
+    <div class="mt-8 overflow-hidden rounded-2xl shadow-xl ring-1 ring-slate-200 dark:ring-slate-800">
+      <iframe
+        src="https://www.youtube.com/embed/eVwipVw4YxI"
+        title="Video de Ilumexa"
+        class="aspect-video w-full"
+        loading="lazy"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </section>
+
+  <!-- Carrusel de logos (duplicado: la segunda copia lleva aria-hidden
+       para que la animación animate-scroll, que desplaza -50%, gire sin
+       salto. No se cambió el orden ni las imágenes de la primera lista.) -->
+  <section class="border-y border-slate-200 bg-white py-20 dark:border-slate-800 dark:bg-slate-900">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <p class="mb-2 text-center text-xs font-semibold uppercase tracking-[0.2em] text-brand-green-600 dark:text-brand-green-400">
+        Con el respaldo de
+      </p>
+      <h2 class="text-center text-3xl font-bold tracking-tight text-royal-950 dark:text-white">
+        Marcas aliadas
+      </h2>
+      <div class="mx-auto mt-3 h-1 w-16 rounded-full bg-brand-green-400"></div>
+      <div class="relative mt-10 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+        <div class="flex w-max animate-scroll hover:[animation-play-state:paused]">
+          <div class="flex items-center space-x-12 pr-12">
+            <img src="/images/tork.png" alt="Tork" class="h-16" />
+            <img src="/images/osram.png" alt="OSRAM" class="h-16" />
+            <img src="/images/forlexa.jpg" alt="forlexa" class="h-16" />
+            <img src="/images/philips.png" alt="Philips" class="h-16" />
+            <img src="/images/tecnolight.png" alt="Tecno Light" class="h-16" />
+            <img src="/images/amg.png" alt="AMG" class="h-16" />
+            <img src="/images/forlighting.png" alt="Forlighting" class="h-16" />
+            <img src="/images/luma.jpg" alt="Luma" class="h-16" />
+            <img src="/images/lumicom.png" alt="Lumicom" class="h-16" />
+            <img src="/images/magg.png" alt="MAGG" class="h-16" />
+            <img src="/images/sola-basic.png" alt="Sola Basic" class="h-16" />
+          </div>
+          <div class="flex items-center space-x-12 pr-12" aria-hidden="true">
+            <img src="/images/tork.png" alt="" class="h-16" />
+            <img src="/images/osram.png" alt="" class="h-16" />
+            <img src="/images/forlexa.jpg" alt="" class="h-16" />
+            <img src="/images/philips.png" alt="" class="h-16" />
+            <img src="/images/tecnolight.png" alt="" class="h-16" />
+            <img src="/images/amg.png" alt="" class="h-16" />
+            <img src="/images/forlighting.png" alt="" class="h-16" />
+            <img src="/images/luma.jpg" alt="" class="h-16" />
+            <img src="/images/lumicom.png" alt="" class="h-16" />
+            <img src="/images/magg.png" alt="" class="h-16" />
+            <img src="/images/sola-basic.png" alt="" class="h-16" />
+          </div>
+        </div>
+      </div>
+      <p class="mt-8 text-center text-sm text-slate-500 dark:text-slate-400">
+        Pasa el cursor sobre el carrusel para pausarlo.
+      </p>
+    </div>
+  </section>
+
+  <!-- Llamada a la acción -->
+  <section class="bg-gradient-to-r from-royal-900 to-royal-700 px-4 py-20 text-center text-white sm:px-6 md:py-24">
+    <div class="mx-auto max-w-3xl">
+      <h2 class="text-3xl font-bold tracking-tight md:text-4xl">
+        Ilumina tus proyectos con nosotros
+      </h2>
+      <p class="mx-auto mt-4 max-w-xl text-lg text-royal-100">
+        Contáctanos para recibir asesoría personalizada en iluminación
+        eficiente y moderna.
+      </p>
+      <a
+        href="/contact"
+        class="mt-8 inline-block rounded-full bg-brand-green-400 px-8 py-3 font-semibold text-royal-950 shadow-lg transition hover:bg-brand-green-300"
+      >
+        Contáctanos
+      </a>
+    </div>
   </section>
 </Layout>

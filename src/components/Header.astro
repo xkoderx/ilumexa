@@ -1,19 +1,50 @@
-<nav class="flex justify-between p-4 bg-gray-200 dark:bg-gray-800">
-  <div class="space-x-4">
-    <a href="/" class="hover:underline">Inicio</a>
-    <a href="/about" class="hover:underline">Acerca de</a>
-    <a href="/products" class="hover:underline">Productos</a>
-    <a href="/services" class="hover:underline">Servicios</a>
-    <a href="/contact" class="hover:underline">Contacto</a>
+<!--
+  Logotipo: el banner oficial es de 960x219 y el panel con el nombre
+  "Ilumexa" está a la derecha. El contenedor fijo (w-44 h-12) con
+  object-cover y object-right recorta el banner para que se lea el nombre
+  sin deformarlo. Ver SUMMARY.md (Versión 2).
+-->
+<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-royal-950/95">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+    <a href="/" class="block h-12 w-44 shrink-0 overflow-hidden rounded-lg ring-1 ring-slate-200 dark:ring-slate-700" aria-label="Ilumexa - Inicio">
+      <img
+        src="/images/logo-ilumexa.jpg"
+        alt="Ilumexa - Iluminando a México e Innovando"
+        class="h-full w-full object-cover object-right"
+      />
+    </a>
+    <div class="hidden items-center gap-1 text-sm font-medium text-slate-700 dark:text-slate-200 md:flex">
+      <a href="/" class="rounded-full px-3 py-2 transition hover:bg-royal-50 hover:text-royal-800 dark:hover:bg-royal-900 dark:hover:text-white">Inicio</a>
+      <a href="/about" class="rounded-full px-3 py-2 transition hover:bg-royal-50 hover:text-royal-800 dark:hover:bg-royal-900 dark:hover:text-white">Acerca de</a>
+      <a href="/products" class="rounded-full px-3 py-2 transition hover:bg-royal-50 hover:text-royal-800 dark:hover:bg-royal-900 dark:hover:text-white">Productos</a>
+      <a href="/services" class="rounded-full px-3 py-2 transition hover:bg-royal-50 hover:text-royal-800 dark:hover:bg-royal-900 dark:hover:text-white">Servicios</a>
+      <a href="/contact" class="rounded-full bg-royal-700 px-4 py-2 text-white shadow-sm transition hover:bg-royal-800">Contacto</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <div class="flex items-center gap-1 text-sm font-medium text-slate-700 dark:text-slate-200 md:hidden">
+        <a href="/products" class="rounded-full px-2 py-2 hover:text-royal-700">Productos</a>
+        <a href="/contact" class="rounded-full px-2 py-2 hover:text-royal-700">Contacto</a>
+      </div>
+      <!-- Botón de tema -->
+      <button
+        id="theme-toggle"
+        aria-label="Cambiar entre modo claro y oscuro"
+        class="rounded-full border border-slate-200 bg-white px-3 py-2 text-sm shadow-sm transition hover:border-royal-300 hover:text-royal-700 dark:border-slate-700 dark:bg-slate-800 dark:hover:text-brand-green-300"
+      >
+        🌞 / 🌙
+      </button>
+    </div>
+  </nav>
+  <!-- Navegación secundaria en móvil -->
+  <div class="flex items-center gap-1 overflow-x-auto border-t border-slate-100 px-4 py-2 text-sm font-medium text-slate-600 dark:border-slate-800 dark:text-slate-300 md:hidden">
+    <a href="/" class="rounded-full px-3 py-1 hover:text-royal-700">Inicio</a>
+    <a href="/about" class="rounded-full px-3 py-1 hover:text-royal-700">Acerca de</a>
+    <a href="/services" class="rounded-full px-3 py-1 hover:text-royal-700">Servicios</a>
   </div>
-  <!-- Botón de tema -->
-  <button id="theme-toggle" class="px-2 py-1 bg-gray-300 dark:bg-gray-700 rounded">
-    🌞 / 🌙
-  </button>
   <script>
     const btn = document.getElementById('theme-toggle');
     btn!.addEventListener('click', () => {
       document.documentElement.classList.toggle('dark');
     });
   </script>
-</nav>
+</header>

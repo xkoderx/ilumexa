@@ -3,7 +3,35 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,ts,tsx}"],
   darkMode: "class", // habilita el modo oscuro con clase
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        // Azul rey: color principal de Ilumexa (de su logotipo)
+        royal: {
+          50: "#eff6ff",
+          100: "#dbeafe",
+          200: "#bfdbfe",
+          300: "#93c5fd",
+          400: "#60a5fa",
+          500: "#3b82f6",
+          600: "#2563eb",
+          700: "#1d4ed8",
+          800: "#1e40af",
+          900: "#1e3a8a",
+          950: "#172554",
+        },
+        // Verde claro: acento del logotipo de Ilumexa
+        "brand-green": {
+          50: "#f0fdf4",
+          100: "#dcfce7",
+          200: "#bbf7d0",
+          300: "#86efac",
+          400: "#4ade80",
+          500: "#22c55e",
+          600: "#16a34a",
+          700: "#15803d",
+        },
+      },
+    },
   },
   plugins: [],
 };

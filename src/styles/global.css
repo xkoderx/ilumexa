@@ -1,6 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #86efac;
+  color: #172554;
+}
+
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -9,4 +19,11 @@
 .animate-scroll {
   display: flex;
   animation: scroll 20s linear infinite;
+}
+
+/* El carrusel se pausa al pasar el cursor (la animación también se
+   pausa con la clase de Tailwind hover:[animation-play-state:paused]
+   en el propio carrusel; esta regla cubre el hover directo). */
+.animate-scroll:hover {
+  animation-play-state: paused;
 }
