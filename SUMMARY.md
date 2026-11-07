@@ -392,3 +392,39 @@ en blanco, así que no se veía:
   blanco era invisible.)
 - **Sin sticky.** Se quitó `sticky top-0 z-50`: el header ya no sigue al
   bajar, se queda arriba de la página.
+
+---
+
+# Versión 8 — Carrusel sin pausa ni texto (2026-11-07)
+
+- Se quitó el texto "Pasa el cursor sobre el carrusel para pausarlo" y
+  la pausa misma: ya no hay `hover:[animation-play-state:paused]` en el
+  carrusel ni regla `.animate-scroll:hover` en `global.css`. El carrusel
+  sigue girando siempre, sin detenerse al pasar el mouse.
+
+---
+
+# Versión 9 — Landing de una sola página y textos en negro (2026-11-07)
+
+Patron quería una landing page: una sola página para que al clicar algo
+del header no se redireccione a otra página.
+
+- **Todo en `index.astro`.** El contenido de las antiguas páginas
+  Acerca de, Productos, Servicios y Contacto ahora vive en secciones con
+  ancla en el inicio: `#inicio` (hero), video, carrusel de marcas,
+  `#nosotros`, `#productos` (12 categorías), `#servicios` (2 servicios),
+  CTA y `#contacto` (datos + formulario mailto). El header y el footer
+  enlazan a las anclas; el desplazamiento es suave
+  (`scroll-behavior: smooth` en `global.css`).
+- **Páginas separadas eliminadas.** Se borraron `about.astro`,
+  `products.astro`, `services.astro` y `contact.astro`. El build genera
+  **1 sola página**.
+- **Textos blancos a negro.** En Nosotros, Productos, Servicios y
+  Contacto ya no hay texto blanco: las bandas de encabezado azul rey con
+  texto blanco se quitaron, las tarjetas azul rey con texto blanco
+  (áreas, datos de contacto) pasaron a tarjetas blancas con texto negro,
+  y los botones azul rey con texto blanco pasaron a verde claro con texto
+  negro (como el botón de "Ilumina tus proyectos"). El único texto blanco
+  que queda es el del hero (sobre la tarjeta oscura de la foto) y el del
+  footer verde, donde se lee bien. Verificado en el HTML compilado.
+- **README actualizado** a la landing de una sola página.
