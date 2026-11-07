@@ -24,19 +24,21 @@ import Layout from '../layouts/Layout.astro';
         />
         <div class="absolute inset-0 bg-gradient-to-r from-royal-950/60 via-royal-950/30 to-royal-950/20"></div>
       </div>
-      <div class="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-center px-4 sm:px-6">
-        <div class="max-w-2xl rounded-3xl bg-royal-950/60 p-6 shadow-2xl ring-1 ring-white/25 backdrop-blur-md sm:p-10">
-          <p class="mb-5 inline-block w-fit rounded-full border border-brand-green-300/50 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-brand-green-300">
+      <div class="relative z-10 mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-4 text-center sm:px-6">
+        <!-- Tarjeta sin borde visible y centrada (2026-11-07): el texto
+             va centrado y la tarjeta queda en el centro del hero. -->
+        <div class="max-w-2xl rounded-3xl bg-royal-950/60 p-6 shadow-2xl backdrop-blur-md sm:p-10">
+          <p class="mx-auto mb-5 inline-block w-fit rounded-full border border-brand-green-300/50 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-brand-green-300">
             Iluminando a México e Innovando
           </p>
           <h1 class="max-w-2xl text-5xl font-extrabold leading-tight tracking-tight text-white md:text-6xl">
             Ilumexa
           </h1>
-          <p class="mt-5 max-w-2xl text-lg leading-relaxed text-royal-100 md:text-xl">
+          <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-royal-100 md:text-xl">
             Soluciones de iluminación pública, industrial, residencial y
             decorativa con marcas líderes.
           </p>
-          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <a
               href="/products"
               class="rounded-full bg-white px-7 py-3 text-center font-semibold text-royal-800 shadow-lg transition hover:bg-brand-green-100"
@@ -129,19 +131,22 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- Llamada a la acción -->
-  <section class="bg-gradient-to-r from-royal-900 to-royal-700 px-4 py-20 text-center text-white sm:px-6 md:py-24">
+  <!-- Llamada a la acción: en claro (2026-11-07). Antes era fondo azul
+       rey con texto blanco y a Patron no le gustaba; ahora el fondo es
+       verde claro y los textos son azul rey y gris oscuro. -->
+  <section class="bg-brand-green-50 px-4 py-20 text-center sm:px-6 md:py-24 dark:bg-slate-900">
     <div class="mx-auto max-w-3xl">
-      <h2 class="text-3xl font-bold tracking-tight md:text-4xl">
+      <h2 class="text-3xl font-bold tracking-tight text-royal-900 dark:text-white md:text-4xl">
         Ilumina tus proyectos con nosotros
       </h2>
-      <p class="mx-auto mt-4 max-w-xl text-lg text-royal-100">
+      <div class="mx-auto mt-3 h-1 w-16 rounded-full bg-brand-green-400"></div>
+      <p class="mx-auto mt-4 max-w-xl text-lg text-slate-600 dark:text-slate-300">
         Contáctanos para recibir asesoría personalizada en iluminación
         eficiente y moderna.
       </p>
       <a
         href="/contact"
-        class="mt-8 inline-block rounded-full bg-brand-green-400 px-8 py-3 font-semibold text-royal-950 shadow-lg transition hover:bg-brand-green-300"
+        class="mt-8 inline-block rounded-full bg-royal-700 px-8 py-3 font-semibold text-white shadow-lg transition hover:bg-royal-800"
       >
         Contáctanos
       </a>

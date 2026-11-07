@@ -291,3 +291,28 @@ Patron revisó la v2 ya subida a la rama `muse` y pidió tres cambios:
   `src/pages/services.astro`, `src/pages/contact.astro` — banda de
   encabezado en degradado azul rey; notas en verde claro (Productos y
   Servicios).
+
+---
+
+# Versión 4 — Ajustes de Patron (2026-11-07)
+
+1. **Hero: tarjeta sin borde y centrada.** Se quitó el anillo blanco
+   (`ring-1 ring-white/25`) y la tarjeta quedó centrada en el hero, con
+   el texto, la insignia y los botones centrados.
+2. **CTA "Ilumina tus proyectos con nosotros" en claro.** Ya no es fondo
+   azul rey con texto blanco: ahora es banda verde claro con título azul
+   rey, texto gris oscuro y botón azul rey. El CTA de Servicios
+   ("¿Tienes un proyecto en mente?") se cambió igual para no repetir el
+   problema.
+3. **Footer sin logo y con color.** Se quitó la imagen del logo; el
+   nombre va en texto ("Ilumexa." blanco con punto verde y subtítulo
+   verde) y arriba lleva una barra de color con el degradado azul rey →
+   verde claro del logo.
+4. **Interruptor de tema rehecho.** El botón anterior (🌞 / 🌙) solo
+   cambiaba la clase `dark` y se perdía al cambiar de página, por eso no
+   funcionaba del todo. Ahora: `Layout.astro` trae un script en línea en
+   `<head>` que aplica el tema guardado antes de pintar (sin parpadeo),
+   leyendo `localStorage` (`ilumexa-theme`) o la preferencia del sistema;
+   el botón es una pastilla con sol y luna y una bolita que se desliza,
+   guarda la elección al hacer clic y sincroniza `aria-checked`. Sigue
+   en el header, a la derecha de la navegación.
