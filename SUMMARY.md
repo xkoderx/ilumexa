@@ -428,3 +428,38 @@ del header no se redireccione a otra página.
   que queda es el del hero (sobre la tarjeta oscura de la foto) y el del
   footer verde, donde se lee bien. Verificado en el HTML compilado.
 - **README actualizado** a la landing de una sola página.
+
+---
+
+# Versión 10 — Foto nueva en alta resolución y diseño más profesional (2026-11-07)
+
+Patron pidió cambiar la foto del hero (tenía razón: 500x250 px era muy
+poca resolución) y un diseño más profesional, porque todo se veía muy
+simple.
+
+1. **Foto nueva.** Carretera con farolas encendidas de noche entre la
+   niebla, de Darya Grey_Owl en Pexels (licencia gratuita),
+   2400x1600 px en JPEG real — casi cinco veces el ancho de la anterior
+   (500x250 px, que además era PNG con nombre .jpg). Se guarda con el
+   mismo nombre (`public/images/calle-iluminada.jpg`) y lleva crédito
+   discreto en la esquina del hero con enlace a la foto en Pexels. La
+   foto anterior era del sitio oficial; esta es de stock, parecida en
+   tema (alumbrado público nocturno en carretera). Hay que subirla a
+   GitHub por la web, porque el conector no acepta binarios. (La
+   primera versión descargada era 1125x750 px; luego se sustituyó por
+   la misma foto a 2400x1600 px. Hay una foto alternativa guardada en
+   `hero-alt-backup.jpg`, fuera de `public/`, por si Patron prefiere
+   comparar.)
+2. **Tipografía Inter.** Se carga Inter de Google Fonts y se pone como
+   `font-sans` en `tailwind.config.js`, con fallback al sistema.
+3. **Barra superior de contacto.** Franja azul rey oscuro sobre el
+   header con los dos teléfonos, el correo y el lema "Iluminando a
+   México e Innovando".
+4. **Hero con ventajas.** Debajo de la tarjeta, tres píldoras de vidrio
+   con iconos y afirmaciones verificadas: Asesoría de proyectos, Ahorro
+   de energía y Marcas líderes.
+5. **Secciones numeradas.** Los subtítulos llevan número: 01 Nosotros,
+   02 Catálogo, 03 Servicios, 04 Contacto.
+6. **Iconos en tarjetas.** Las 12 tarjetas de producto llevan un icono
+   de foco; las de servicio, rayo (Mantenimiento) y chat (Asesoría); los
+   datos de contacto, iconos de ubicación, teléfono y correo.

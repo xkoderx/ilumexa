@@ -69,12 +69,14 @@ negro (sin logotipo en imagen y sin sticky) y footer verde.
 - **Logotipo:** el banner oficial (`public/images/logo-ilumexa.jpg`,
   960x219) ya no se muestra en el header ni en el footer; el nombre va
   en texto. La imagen sigue guardada en `public/images/`.
-- **Hero:** foto verificada del sitio oficial
-  (`public/images/calle-iluminada.jpg`, alumbrado público nocturno en una
-  avenida), a todo el ancho, `h-[45vh]` en móvil y `h-[60vh]`/`h-[70vh]`
+- **Hero:** foto de stock de Pexels (Darya Grey_Owl, carretera con
+  farolas encendidas de noche entre la niebla, 1125x750 px, licencia
+  gratuita), a todo el ancho, `h-[45vh]` en móvil y `h-[60vh]`/`h-[70vh]`
   en escritorio. Es un slider de una sola imagen, sin rotación
   automática, con los textos en blanco dentro de una tarjeta azul rey
-  semitransparente y centrada.
+  semitransparente y centrada, y debajo tres píldoras con las ventajas
+  (asesoría, ahorro de energía, marcas líderes). Sustituye a la foto del
+  sitio oficial (`images/4a.png`, 500x250 px), que se veía pixelada.
 - **Video:** iframe de YouTube (`https://www.youtube.com/embed/eVwipVw4YxI`)
   con `aspect-video` y bordes redondeados.
 - **Carrusel de logos:** lista duplicada (segunda copia con

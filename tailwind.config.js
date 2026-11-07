@@ -6,6 +6,9 @@ export default {
   // Se quitó el interruptor de tema a petición de Patron (2026-11-07).
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
       colors: {
         // Azul rey: color principal de Ilumexa (de su logotipo)
         royal: {
