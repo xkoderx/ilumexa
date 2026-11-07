@@ -6,7 +6,9 @@ import Layout from '../layouts/Layout.astro';
        Foto verificada del sitio oficial (images/4a.png): alumbrado
        público nocturno en una avenida, 500x250 px. Es el único slide:
        no se inventaron más fotos ni hay rotación automática.
-       El degradado azul rey encima es para que el texto se lea bien. -->
+       Los textos van dentro de una tarjeta azul rey semitransparente
+       con desenfoque (2026-11-07): antes iban directos sobre la foto
+       y en las zonas claras no se leían. -->
   <section
     class="relative w-full overflow-hidden"
     role="region"
@@ -20,33 +22,34 @@ import Layout from '../layouts/Layout.astro';
           alt="Avenida iluminada de noche con alumbrado público de Ilumexa"
           class="h-full w-full object-cover"
         />
-        <div class="absolute inset-0 bg-gradient-to-r from-royal-950/90 via-royal-900/70 to-royal-900/30"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-royal-950/80 via-transparent to-royal-950/40"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-royal-950/60 via-royal-950/30 to-royal-950/20"></div>
       </div>
       <div class="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-center px-4 sm:px-6">
-        <p class="mb-5 inline-block w-fit rounded-full border border-brand-green-300/50 bg-royal-950/50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-brand-green-300">
-          Iluminando a México e Innovando
-        </p>
-        <h1 class="max-w-2xl text-5xl font-extrabold leading-tight tracking-tight text-white drop-shadow-lg md:text-6xl">
-          Ilumexa
-        </h1>
-        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-royal-100 drop-shadow md:text-xl">
-          Soluciones de iluminación pública, industrial, residencial y
-          decorativa con marcas líderes.
-        </p>
-        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a
-            href="/products"
-            class="rounded-full bg-white px-7 py-3 text-center font-semibold text-royal-800 shadow-lg transition hover:bg-brand-green-100"
-          >
-            Ver productos
-          </a>
-          <a
-            href="/contact"
-            class="rounded-full border border-white/60 px-7 py-3 text-center font-semibold text-white transition hover:bg-white/10"
-          >
-            Contáctanos
-          </a>
+        <div class="max-w-2xl rounded-3xl bg-royal-950/60 p-6 shadow-2xl ring-1 ring-white/25 backdrop-blur-md sm:p-10">
+          <p class="mb-5 inline-block w-fit rounded-full border border-brand-green-300/50 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-brand-green-300">
+            Iluminando a México e Innovando
+          </p>
+          <h1 class="max-w-2xl text-5xl font-extrabold leading-tight tracking-tight text-white md:text-6xl">
+            Ilumexa
+          </h1>
+          <p class="mt-5 max-w-2xl text-lg leading-relaxed text-royal-100 md:text-xl">
+            Soluciones de iluminación pública, industrial, residencial y
+            decorativa con marcas líderes.
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="/products"
+              class="rounded-full bg-white px-7 py-3 text-center font-semibold text-royal-800 shadow-lg transition hover:bg-brand-green-100"
+            >
+              Ver productos
+            </a>
+            <a
+              href="/contact"
+              class="rounded-full border border-white/60 px-7 py-3 text-center font-semibold text-white transition hover:bg-white/10"
+            >
+              Contáctanos
+            </a>
+          </div>
         </div>
       </div>
       <!-- Indicador del slider (un solo slide) -->
@@ -56,8 +59,9 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- Video de Ilumexa -->
-  <section class="mx-auto max-w-4xl px-4 py-20 sm:px-6 md:py-24">
+  <!-- Video de Ilumexa: banda blanca sobre el fondo azul claro -->
+  <section class="border-b border-royal-100 bg-white dark:border-slate-800 dark:bg-slate-900">
+    <div class="mx-auto max-w-4xl px-4 py-20 sm:px-6 md:py-24">
     <p class="mb-2 text-center text-xs font-semibold uppercase tracking-[0.2em] text-brand-green-600 dark:text-brand-green-400">
       Conoce Ilumexa
     </p>
@@ -74,12 +78,13 @@ import Layout from '../layouts/Layout.astro';
         allowfullscreen
       ></iframe>
     </div>
+    </div>
   </section>
 
   <!-- Carrusel de logos (duplicado: la segunda copia lleva aria-hidden
        para que la animación animate-scroll, que desplaza -50%, gire sin
        salto. No se cambió el orden ni las imágenes de la primera lista.) -->
-  <section class="border-y border-slate-200 bg-white py-20 dark:border-slate-800 dark:bg-slate-900">
+  <section class="border-b border-brand-green-100 bg-brand-green-50 py-20 dark:border-slate-800 dark:bg-slate-900">
     <div class="mx-auto max-w-7xl px-4 sm:px-6">
       <p class="mb-2 text-center text-xs font-semibold uppercase tracking-[0.2em] text-brand-green-600 dark:text-brand-green-400">
         Con el respaldo de

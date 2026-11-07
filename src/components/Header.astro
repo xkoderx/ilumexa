@@ -1,17 +1,15 @@
-<!--
-  Logotipo: el banner oficial es de 960x219 y el panel con el nombre
-  "Ilumexa" está a la derecha. El contenedor fijo (w-44 h-12) con
-  object-cover y object-right recorta el banner para que se lea el nombre
-  sin deformarlo. Ver SUMMARY.md (Versión 2).
--->
-<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-royal-950/95">
+<!-- Logotipo en texto: el banner oficial (logo.jpg) se quitó del
+     header a petición de Patron (2026-11-07): no se veía como el logo
+     de la página. La imagen sigue en public/images por si se usa en
+     otro lado, y el footer aún la muestra. -->
+<header class="sticky top-0 z-50 border-b border-royal-100 bg-white/95 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-royal-950/95">
   <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-    <a href="/" class="block h-12 w-44 shrink-0 overflow-hidden rounded-lg ring-1 ring-slate-200 dark:ring-slate-700" aria-label="Ilumexa - Inicio">
-      <img
-        src="/images/logo-ilumexa.jpg"
-        alt="Ilumexa - Iluminando a México e Innovando"
-        class="h-full w-full object-cover object-right"
-      />
+    <a href="/" class="flex shrink-0 items-center gap-2.5" aria-label="Ilumexa - Inicio">
+      <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-royal-700 text-xl font-extrabold text-white shadow-sm">I</span>
+      <span class="leading-none">
+        <span class="block text-2xl font-extrabold tracking-tight text-royal-900 dark:text-white">Ilumexa</span>
+        <span class="mt-1 block text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-green-600 dark:text-brand-green-400">Iluminando a México</span>
+      </span>
     </a>
     <div class="hidden items-center gap-1 text-sm font-medium text-slate-700 dark:text-slate-200 md:flex">
       <a href="/" class="rounded-full px-3 py-2 transition hover:bg-royal-50 hover:text-royal-800 dark:hover:bg-royal-900 dark:hover:text-white">Inicio</a>

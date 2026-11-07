@@ -66,17 +66,20 @@ const categories = [
 ---
 
 <Layout title="Productos">
-  <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-24">
-    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-green-600 dark:text-brand-green-400">
-      Catálogo
-    </p>
-    <h2 class="mt-2 text-3xl font-bold tracking-tight text-royal-950 dark:text-white md:text-4xl">
-      Nuestros productos
-    </h2>
-    <div class="mt-3 h-1 w-16 rounded-full bg-brand-green-400"></div>
-    <p class="mt-4 max-w-2xl text-lg text-slate-600 dark:text-slate-400">
-      Categorías de productos de Ilumexa, según el menú del sitio oficial.
-    </p>
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-16">
+    <!-- Banda de encabezado: texto blanco solo sobre degradado azul rey -->
+    <div class="rounded-3xl bg-gradient-to-r from-royal-900 via-royal-800 to-royal-700 px-6 py-10 text-white shadow-lg sm:px-10">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-green-300">
+        Catálogo
+      </p>
+      <h2 class="mt-2 text-3xl font-bold tracking-tight md:text-4xl">
+        Nuestros productos
+      </h2>
+      <div class="mt-3 h-1 w-16 rounded-full bg-brand-green-400"></div>
+      <p class="mt-4 max-w-2xl text-lg text-royal-100">
+        Categorías de productos de Ilumexa, según el menú del sitio oficial.
+      </p>
+    </div>
 
     <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
       {
@@ -105,7 +108,7 @@ const categories = [
       }
     </div>
 
-    <div class="mt-10 rounded-2xl border border-royal-200 bg-royal-50 p-6 dark:border-royal-800 dark:bg-royal-950/50">
+    <div class="mt-10 rounded-2xl border border-brand-green-200 bg-brand-green-50 p-6 dark:border-royal-800 dark:bg-royal-950/50">
       <p class="text-slate-700 dark:text-slate-300">
         Las fichas técnicas detalladas están pendientes: las páginas de
         producto del sitio oficial no cargan (404). Para el catálogo
