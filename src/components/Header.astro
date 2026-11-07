@@ -1,34 +1,33 @@
 <!-- Logotipo en texto: el banner oficial (logo.jpg) se quitó del
      header a petición de Patron (2026-11-07): no se veía como el logo
      de la página. La imagen sigue en public/images por si se usa en
-     otro lado. El header es azul rey: fondo royal-800 con textos
-     blancos. Sin "I" al lado del nombre (quitado 2026-11-07) y sin
-     interruptor de tema: el modo oscuro se quitó por completo a
-     petición de Patron, así que no hay botón ni script de tema. -->
-<header class="sticky top-0 z-50 bg-royal-800 shadow-md">
+     otro lado. Header blanco con el nombre en negro (2026-11-07): el
+     texto blanco no se veía sobre el fondo blanco. No se queda fijo:
+     el header se queda arriba de la página y no sigue al bajar. -->
+<header class="border-b border-royal-100 bg-white shadow-sm">
   <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
     <a href="/" class="flex shrink-0 items-center gap-2.5" aria-label="Ilumexa - Inicio">
       <span class="leading-none">
-        <span class="block text-2xl font-extrabold tracking-tight text-white">Ilumexa<span class="text-brand-green-400">.</span></span>
-        <span class="mt-1 block text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-green-300">Iluminando a México</span>
+        <span class="block text-2xl font-extrabold tracking-tight text-black">Ilumexa<span class="text-brand-green-600">.</span></span>
+        <span class="mt-1 block text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-green-700">Iluminando a México</span>
       </span>
     </a>
-    <div class="hidden items-center gap-1 text-sm font-medium text-royal-100 md:flex">
-      <a href="/" class="rounded-full px-3 py-2 transition hover:bg-white/10 hover:text-white">Inicio</a>
-      <a href="/about" class="rounded-full px-3 py-2 transition hover:bg-white/10 hover:text-white">Acerca de</a>
-      <a href="/products" class="rounded-full px-3 py-2 transition hover:bg-white/10 hover:text-white">Productos</a>
-      <a href="/services" class="rounded-full px-3 py-2 transition hover:bg-white/10 hover:text-white">Servicios</a>
+    <div class="hidden items-center gap-1 text-sm font-medium text-royal-800 md:flex">
+      <a href="/" class="rounded-full px-3 py-2 transition hover:bg-royal-50 hover:text-royal-900">Inicio</a>
+      <a href="/about" class="rounded-full px-3 py-2 transition hover:bg-royal-50 hover:text-royal-900">Acerca de</a>
+      <a href="/products" class="rounded-full px-3 py-2 transition hover:bg-royal-50 hover:text-royal-900">Productos</a>
+      <a href="/services" class="rounded-full px-3 py-2 transition hover:bg-royal-50 hover:text-royal-900">Servicios</a>
       <a href="/contact" class="rounded-full bg-brand-green-400 px-4 py-2 font-semibold text-royal-950 shadow-sm transition hover:bg-brand-green-300">Contacto</a>
     </div>
-    <div class="flex items-center gap-1 text-sm font-medium text-royal-100 md:hidden">
-      <a href="/products" class="rounded-full px-2 py-2 hover:text-white">Productos</a>
-      <a href="/contact" class="rounded-full px-2 py-2 hover:text-white">Contacto</a>
+    <div class="flex items-center gap-1 text-sm font-medium text-royal-800 md:hidden">
+      <a href="/products" class="rounded-full px-2 py-2 hover:text-royal-900">Productos</a>
+      <a href="/contact" class="rounded-full px-2 py-2 hover:text-royal-900">Contacto</a>
     </div>
   </nav>
   <!-- Navegación secundaria en móvil -->
-  <div class="flex items-center gap-1 overflow-x-auto border-t border-white/15 px-4 py-2 text-sm font-medium text-royal-100 md:hidden">
-    <a href="/" class="rounded-full px-3 py-1 hover:text-white">Inicio</a>
-    <a href="/about" class="rounded-full px-3 py-1 hover:text-white">Acerca de</a>
-    <a href="/services" class="rounded-full px-3 py-1 hover:text-white">Servicios</a>
+  <div class="flex items-center gap-1 overflow-x-auto border-t border-royal-100 px-4 py-2 text-sm font-medium text-royal-800 md:hidden">
+    <a href="/" class="rounded-full px-3 py-1 hover:text-royal-900">Inicio</a>
+    <a href="/about" class="rounded-full px-3 py-1 hover:text-royal-900">Acerca de</a>
+    <a href="/services" class="rounded-full px-3 py-1 hover:text-royal-900">Servicios</a>
   </div>
 </header>

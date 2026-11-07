@@ -375,3 +375,20 @@ o `npm run preview` dentro de la carpeta), no con doble clic al
 `index.html`, porque las rutas de estilos e imágenes son absolutas y con
 doble clic no cargan. Eso explica en parte que los colores "ni se
 mostraran".
+
+---
+
+# Versión 7 — Header blanco con logo negro y sin sticky (2026-11-07)
+
+Patron veía el fondo del header en blanco y el texto del logo también
+en blanco, así que no se veía:
+
+- **Header blanco con logo en negro.** Fondo `bg-white` con borde
+  inferior azul claro; "Ilumexa" en `text-black` con el punto en verde
+  oscuro y el subtítulo en verde oscuro (`brand-green-700`); enlaces en
+  azul rey (`royal-800`) con hover en azul claro. El botón Contacto
+  sigue verde claro con texto azul rey. (Se abandona el header azul rey
+  de la v5: en la pantalla de Patron el fondo se veía blanco y el texto
+  blanco era invisible.)
+- **Sin sticky.** Se quitó `sticky top-0 z-50`: el header ya no sigue al
+  bajar, se queda arriba de la página.
