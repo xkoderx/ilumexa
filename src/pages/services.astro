@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    name: 'Mantenimiento e Instalación',
+    description:
+      'Servicio de mantenimiento e instalación de alumbrado.',
+  },
+  {
+    name: 'Asesoría de Proyectos',
+    description:
+      'Asesoramiento en el desarrollo de sus proyectos.',
+  },
+];
+---
+
+<Layout title="Servicios">
+  <h2 class="text-3xl font-bold mb-6">Nuestros servicios</h2>
+  <p class="mb-6">
+    Servicios de Ilumexa, según el menú del sitio oficial.
+  </p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {
+      services.map((service) => (
+        <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-4">
+          <h3 class="text-xl font-semibold mb-2">{service.name}</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            {service.description}
+          </p>
+          <a
+            href="/contact"
+            class="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          >
+            Más información
+          </a>
+        </div>
+      ))
+    }
+  </div>
+  <p class="mt-8 text-gray-700 dark:text-gray-300">
+    El detalle de los servicios está pendiente de verificar: las páginas de
+    servicios del sitio oficial no cargan (404).
+  </p>
+</Layout>

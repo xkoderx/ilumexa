@@ -1,45 +1,95 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const categories = [
+  {
+    name: 'Alumbrado Público',
+    description:
+      'Soluciones de iluminación para alumbrado público.',
+  },
+  {
+    name: 'Alumbrado Exterior',
+    description:
+      'Iluminación para espacios exteriores.',
+  },
+  {
+    name: 'Iluminación LED',
+    description:
+      'Productos de iluminación LED.',
+  },
+  {
+    name: 'Luminario',
+    description:
+      'Luminarios para distintos espacios y usos.',
+  },
+  {
+    name: 'Postes',
+    description:
+      'Postes para alumbrado.',
+  },
+  {
+    name: 'Alumbrado Decorativo',
+    description:
+      'Iluminación decorativa para distintos espacios.',
+  },
+  {
+    name: 'Alumbrado Industrial',
+    description:
+      'Iluminación para espacios industriales.',
+  },
+  {
+    name: 'Postes - Fichas Técnicas',
+    description:
+      'Fichas técnicas de postes. Detalle pendiente de verificar.',
+  },
+  {
+    name: 'Exterior Decorativo',
+    description:
+      'Iluminación decorativa para exteriores.',
+  },
+  {
+    name: 'Interior Decorativo',
+    description:
+      'Iluminación decorativa para interiores.',
+  },
+  {
+    name: 'Mobiliario Decorativo',
+    description:
+      'Mobiliario decorativo con iluminación.',
+  },
+  {
+    name: 'Accesorios y Bases de Concreto',
+    description:
+      'Accesorios y bases de concreto para instalaciones de alumbrado.',
+  },
+];
 ---
+
 <Layout title="Productos">
   <h2 class="text-3xl font-bold mb-6">Nuestros productos</h2>
+  <p class="mb-6">
+    Categorías de productos de Ilumexa, según el menú del sitio oficial.
+  </p>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    
-    <!-- Tarjeta 1 -->
-    <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-4">
-      <img src="/images/luminaria-led.jpg" alt="Luminaria LED" class="rounded mb-4" />
-      <h3 class="text-xl font-semibold mb-2">Luminaria LED</h3>
-      <p class="text-gray-700 dark:text-gray-300 mb-4">
-        Iluminación eficiente para espacios públicos y privados, con ahorro de energía garantizado.
-      </p>
-      <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-        Más información
-      </button>
-    </div>
-
-    <!-- Tarjeta 2 -->
-    <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-4">
-      <img src="/images/industrial-light.jpg" alt="Iluminación Industrial" class="rounded mb-4" />
-      <h3 class="text-xl font-semibold mb-2">Iluminación Industrial</h3>
-      <p class="text-gray-700 dark:text-gray-300 mb-4">
-        Diseñada para fábricas y almacenes, con máxima durabilidad y potencia lumínica.
-      </p>
-      <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-        Más información
-      </button>
-    </div>
-
-    <!-- Tarjeta 3 -->
-    <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-4">
-      <img src="/images/decor-light.jpg" alt="Iluminación Decorativa" class="rounded mb-4" />
-      <h3 class="text-xl font-semibold mb-2">Iluminación Decorativa</h3>
-      <p class="text-gray-700 dark:text-gray-300 mb-4">
-        Dale estilo a tus espacios con lámparas y accesorios modernos y elegantes.
-      </p>
-      <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-        Más información
-      </button>
-    </div>
-
+    {
+      categories.map((category) => (
+        <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-4">
+          <h3 class="text-xl font-semibold mb-2">{category.name}</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            {category.description}
+          </p>
+          <a
+            href="/contact"
+            class="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          >
+            Más información
+          </a>
+        </div>
+      ))
+    }
   </div>
+  <p class="mt-8 text-gray-700 dark:text-gray-300">
+    Las fichas técnicas detalladas están pendientes: las páginas de producto
+    del sitio oficial no cargan (404). Para el catálogo completo, contáctanos.
+  </p>
 </Layout>
