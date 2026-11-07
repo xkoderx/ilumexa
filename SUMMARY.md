@@ -316,3 +316,32 @@ Patron revisó la v2 ya subida a la rama `muse` y pidió tres cambios:
    el botón es una pastilla con sol y luna y una bolita que se desliza,
    guarda la elección al hacer clic y sincroniza `aria-checked`. Sigue
    en el header, a la derecha de la navegación.
+
+---
+
+# Versión 5 — Header azul, footer verde y tema visible (2026-11-07)
+
+Patron notó que el header y el footer no cambiaban con el tema (el
+footer no tenía ninguna variante `dark:`) y que los textos del carrusel
+tampoco se notaba que cambiaran.
+
+1. **Header azul rey.** Fondo `royal-800` en claro y `royal-950` en
+   oscuro, con textos blancos en los dos temas: nombre en blanco,
+   subtítulo verde claro, enlaces `royal-100` con hover blanco
+   translúcido, botón Contacto verde claro con texto azul rey, y la
+   pastilla del interruptor ahora es blanca translúcida para que se vea
+   sobre el azul.
+2. **Footer verde.** Fondo `brand-green-700` en claro y
+   `brand-green-900` en oscuro (se añadieron los tonos 800 `#166534` y
+   900 `#14532d` a la paleta en `tailwind.config.js`), textos
+   `brand-green-50`/`brand-green-100` que cambian con el tema, títulos
+   en blanco y arriba una franja azul rey que une los dos colores del
+   logo.
+3. **Textos del carrusel con cambio visible.** La sección ahora es
+   verde claro en modo claro y azul rey oscuro (`dark:bg-royal-950`) en
+   modo oscuro; la insignia pasó a `brand-green-700` /
+   `dark:text-brand-green-300` y la nota a `slate-600` /
+   `dark:text-slate-300`. (Las variantes oscuras sí existían en el CSS
+   compilado de la v4; lo que no cambiaba era el footer, que no tenía
+   variantes `dark:`, y el header, que cambiaba muy poco.) Los logos del
+   carrusel no se tocaron: son imágenes y conservan su fondo.

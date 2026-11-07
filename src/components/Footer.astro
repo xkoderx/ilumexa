@@ -1,14 +1,15 @@
-<!-- Footer sin logo (2026-11-07, a petición de Patron): el nombre va
-     en texto y arriba lleva una barra de color con el degradado azul
-     rey → verde claro del logo. -->
-<footer class="bg-royal-950 text-slate-300">
-  <div class="h-1.5 bg-gradient-to-r from-royal-700 via-brand-green-400 to-royal-700" aria-hidden="true"></div>
+<!-- Footer verde (2026-11-07, a petición de Patron): fondo verde
+     (brand-green-700 en claro, brand-green-900 en oscuro) con textos
+     que sí cambian con el tema, y arriba una franja azul rey que une
+     los dos colores del logo. Sin imagen de logo: el nombre va en texto. -->
+<footer class="bg-brand-green-700 text-brand-green-50 dark:bg-brand-green-900 dark:text-brand-green-100">
+  <div class="h-1.5 bg-gradient-to-r from-royal-900 via-royal-700 to-royal-900" aria-hidden="true"></div>
   <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
     <div>
       <p class="text-2xl font-extrabold tracking-tight text-white">
-        Ilumexa<span class="text-brand-green-400">.</span>
+        Ilumexa<span class="text-brand-green-200">.</span>
       </p>
-      <p class="mt-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-green-300">
+      <p class="mt-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-green-100">
         Iluminando a México
       </p>
       <p class="mt-4 text-sm leading-relaxed">
@@ -17,7 +18,7 @@
       </p>
     </div>
     <div>
-      <h3 class="mb-3 text-sm font-semibold uppercase tracking-widest text-brand-green-300">Contacto</h3>
+      <h3 class="mb-3 text-sm font-semibold uppercase tracking-widest text-white">Contacto</h3>
       <p class="text-sm leading-relaxed">
         Raymundo Montoya Mz. 22 Lt. 7, Col. Benito Juárez, C.P. 08930,
         Iztacalco, México D.F.
@@ -38,7 +39,7 @@
       </p>
     </div>
     <div>
-      <h3 class="mb-3 text-sm font-semibold uppercase tracking-widest text-brand-green-300">Navegación</h3>
+      <h3 class="mb-3 text-sm font-semibold uppercase tracking-widest text-white">Navegación</h3>
       <ul class="space-y-2 text-sm">
         <li><a href="/" class="hover:text-white hover:underline">Inicio</a></li>
         <li><a href="/about" class="hover:text-white hover:underline">Acerca de</a></li>
@@ -48,7 +49,7 @@
       </ul>
     </div>
   </div>
-  <div class="border-t border-white/10 py-4 text-center text-sm text-slate-400">
+  <div class="border-t border-white/15 py-4 text-center text-sm text-brand-green-100 dark:text-brand-green-200">
     <p>© 2026 Ilumexa - Iluminando México e Innovando</p>
   </div>
 </footer>
