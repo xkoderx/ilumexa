@@ -431,11 +431,15 @@ del header no se redireccione a otra página.
 
 ---
 
-# Versión 10 — Foto nueva en alta resolución y diseño más profesional (2026-11-07)
+# Versión 10 — Foto nueva en alta resolución y diseño más profesional (2026-11-07, COMPLETA en la rama muse)
 
 Patron pidió cambiar la foto del hero (tenía razón: 500x250 px era muy
 poca resolución) y un diseño más profesional, porque todo se veía muy
-simple.
+simple. Textos subidos en commit 4bab7be (verificado) y foto nueva
+subida por la web de GitHub en commit 350c916 (2026-11-07 16:25 CST,
+verificado en el navegador: 2400x1600). La aprobación para el push de
+textos expiró dos veces (~16:00 CST) y se logró al reintentar cuando
+Patron lo pidió (~16:24 CST).
 
 1. **Foto nueva.** Carretera con farolas encendidas de noche entre la
    niebla, de Darya Grey_Owl en Pexels (licencia gratuita),
@@ -445,11 +449,10 @@ simple.
    discreto en la esquina del hero con enlace a la foto en Pexels. La
    foto anterior era del sitio oficial; esta es de stock, parecida en
    tema (alumbrado público nocturno en carretera). Hay que subirla a
-   GitHub por la web, porque el conector no acepta binarios. (La
-   primera versión descargada era 1125x750 px; luego se sustituyó por
-   la misma foto a 2400x1600 px. Hay una foto alternativa guardada en
-   `hero-alt-backup.jpg`, fuera de `public/`, por si Patron prefiere
-   comparar.)
+   GitHub por la web, porque el conector no acepta binarios. (La primera versión descargada era 1125x750 px; luego se sustituyó por
+   la misma foto a 2400x1600 px. La foto alternativa (Vova Kras) pasó a
+   `public/images/avenida-noche.jpg` y se usa en la sección Nosotros
+   desde la v11.)
 2. **Tipografía Inter.** Se carga Inter de Google Fonts y se pone como
    `font-sans` en `tailwind.config.js`, con fallback al sistema.
 3. **Barra superior de contacto.** Franja azul rey oscuro sobre el
@@ -463,3 +466,46 @@ simple.
 6. **Iconos en tarjetas.** Las 12 tarjetas de producto llevan un icono
    de foco; las de servicio, rayo (Mantenimiento) y chat (Asesoría); los
    datos de contacto, iconos de ubicación, teléfono y correo.
+
+---
+
+# Versión 11 — Rediseño WOW con estructura de landing gratuita AstroWind (2026-11-07)
+
+Patron dijo que le gusta la v10 pero que le falta un toque profesional
+para decir "WOW, este sitio es increíble", y pidió basarlo en un
+landing gratuito de otro sitio, con toda la información dada, sin tocar
+el carrusel de marcas.
+
+Referencia: **AstroWind**, plantilla gratuita de Astro + Tailwind
+(licencia MIT, la más usada del ecosistema), estructura: hero, logos,
+features, steps, stats, CTA. No se copió su código ni sus textos, solo
+la estructura de secciones, adaptada a Ilumexa con contenido verificado.
+
+Cambios:
+1. **Hero más espectacular.** Más alto (88-92vh), zoom lento Ken Burns
+   sobre la foto, brillos decorativos de la paleta, nombre "Ilumexa" con
+   degradado blanco a verde, entrada escalonada de los textos (fade-up) y
+   botones con escala al pasar el mouse. El punto indicador se cambió por
+   una flecha "Desliza" con rebote.
+2. **Banda de cifras** (nueva, solo números verificados): 12 categorías
+   de productos, 2 servicios, 10 marcas líderes, sobre degradado azul rey.
+3. **Video** enmarcado más grande (rounded-3xl, sombra 2xl).
+4. **Nosotros en dos columnas.** A la derecha, segunda foto: avenida de
+   noche con farolas (Vova Kras / Pexels, 2400x1800,
+   `public/images/avenida-noche.jpg`), con zoom al pasar el mouse y una
+   tarjeta flotante animada con el dato verificado "10 marcas líderes".
+   Hay que subirla por la web de GitHub (binario).
+5. **Productos:** tarjetas con reveal escalonado al hacer scroll, más
+   elevación al pasar el mouse y el icono que se vuelve degradado.
+6. **Cómo trabajamos** (nueva sección, pasos 01-03): Asesoría de
+   proyectos → Instalación → Mantenimiento, sacados de los 2 servicios
+   verificados, con línea punteada conectora en escritorio.
+7. **Servicios** ahora 04 y **Contacto** 05. La llamada a la acción es
+   una banda con degradado azul rey, brillos y botón verde.
+8. **Reveal al hacer scroll** en todas las secciones (IntersectionObserver
+   en Layout.astro, clases en global.css), con respeto a
+   `prefers-reduced-motion`. El carrusel de marcas NO se tocó.
+
+Estado: lista en local, build verificado (1 página). Pendiente de subir
+a la rama muse (textos por el conector y la foto nueva
+`public/images/avenida-noche.jpg` por la web de GitHub).

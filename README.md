@@ -70,13 +70,23 @@ negro (sin logotipo en imagen y sin sticky) y footer verde.
   960x219) ya no se muestra en el header ni en el footer; el nombre va
   en texto. La imagen sigue guardada en `public/images/`.
 - **Hero:** foto de stock de Pexels (Darya Grey_Owl, carretera con
-  farolas encendidas de noche entre la niebla, 1125x750 px, licencia
-  gratuita), a todo el ancho, `h-[45vh]` en móvil y `h-[60vh]`/`h-[70vh]`
-  en escritorio. Es un slider de una sola imagen, sin rotación
-  automática, con los textos en blanco dentro de una tarjeta azul rey
-  semitransparente y centrada, y debajo tres píldoras con las ventajas
-  (asesoría, ahorro de energía, marcas líderes). Sustituye a la foto del
-  sitio oficial (`images/4a.png`, 500x250 px), que se veía pixelada.
+  farolas encendidas de noche entre la niebla, 2400x1600 px, licencia
+  gratuita), a todo el ancho, casi toda la altura de la pantalla. Es un
+  slider de una sola imagen, sin rotación automática, con zoom lento
+  (Ken Burns), brillos decorativos, los textos en blanco dentro de una
+  tarjeta azul rey semitransparente y centrada, entrada escalonada y
+  debajo tres píldoras con las ventajas (asesoría, ahorro de energía,
+  marcas líderes). Sustituye a la foto del sitio oficial (`images/4a.png`,
+  500x250 px), que se veía pixelada.
+- **Banda de cifras:** 12 categorías, 2 servicios y 10 marcas líderes
+  (números verificados) sobre degradado azul rey.
+- **Nosotros:** dos columnas con segunda foto de stock (Vova Kras,
+  avenida de noche, 2400x1800 px, `public/images/avenida-noche.jpg`) y
+  tarjeta flotante con el dato de las 10 marcas.
+- **Cómo trabajamos:** 3 pasos (Asesoría → Instalación →
+  Mantenimiento) sacados de los 2 servicios verificados.
+- **Animaciones:** reveal al hacer scroll en todas las secciones
+  (IntersectionObserver en `Layout.astro`, clases en `global.css`).
 - **Video:** iframe de YouTube (`https://www.youtube.com/embed/eVwipVw4YxI`)
   con `aspect-video` y bordes redondeados.
 - **Carrusel de logos:** lista duplicada (segunda copia con
