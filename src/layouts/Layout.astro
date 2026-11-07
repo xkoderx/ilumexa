@@ -4,7 +4,7 @@ import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 const { title } = Astro.props;
 ---
-<html lang="es" class="bg-royal-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100">
+<html lang="es" class="bg-royal-50 text-slate-900">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,20 +13,6 @@ const { title } = Astro.props;
       content="Ilumexa: fabricación y comercialización de productos para alumbrado público, industrial, residencial y decorativo en México."
     />
     <title>{title} | Ilumexa</title>
-    <!-- Tema claro/oscuro: se aplica antes de pintar la página para
-         que no parpadee. Lee la elección guardada (`ilumexa-theme`) y,
-         si no hay ninguna, respeta la preferencia del sistema. -->
-    <script is:inline>
-      (function () {
-        try {
-          var stored = localStorage.getItem('ilumexa-theme');
-          var dark = stored
-            ? stored === 'dark'
-            : window.matchMedia('(prefers-color-scheme: dark)').matches;
-          if (dark) document.documentElement.classList.add('dark');
-        } catch (e) {}
-      })();
-    </script>
   </head>
   <body class="min-h-screen flex flex-col antialiased">
     <Header />

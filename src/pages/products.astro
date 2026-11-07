@@ -84,16 +84,16 @@ const categories = [
     <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
       {
         categories.map((category, i) => (
-          <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+          <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl">
             <div class="h-1.5 bg-gradient-to-r from-royal-700 to-brand-green-400"></div>
             <div class="p-8">
-              <p class="text-sm font-semibold uppercase tracking-widest text-brand-green-600 dark:text-brand-green-400">
+              <p class="text-sm font-semibold uppercase tracking-widest text-brand-green-600">
                 {String(i + 1).padStart(2, '0')}
               </p>
-              <h3 class="mt-1 text-xl font-semibold text-royal-950 dark:text-white">
+              <h3 class="mt-1 text-xl font-semibold text-royal-950">
                 {category.name}
               </h3>
-              <p class="mt-2 text-slate-600 dark:text-slate-400">
+              <p class="mt-2 text-slate-600">
                 {category.description}
               </p>
               <a
@@ -108,8 +108,8 @@ const categories = [
       }
     </div>
 
-    <div class="mt-10 rounded-2xl border border-brand-green-200 bg-brand-green-50 p-6 dark:border-royal-800 dark:bg-royal-950/50">
-      <p class="text-slate-700 dark:text-slate-300">
+    <div class="mt-10 rounded-2xl border border-brand-green-200 bg-brand-green-50 p-6">
+      <p class="text-slate-700">
         Las fichas técnicas detalladas están pendientes: las páginas de
         producto del sitio oficial no cargan (404). Para el catálogo
         completo, contáctanos.

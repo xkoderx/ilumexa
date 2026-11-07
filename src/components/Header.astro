@@ -1,14 +1,15 @@
 <!-- Logotipo en texto: el banner oficial (logo.jpg) se quitó del
      header a petición de Patron (2026-11-07): no se veía como el logo
      de la página. La imagen sigue en public/images por si se usa en
-     otro lado. El header es azul rey (2026-11-07): fondo royal-800 en
-     claro y royal-950 en oscuro, con textos blancos. -->
-<header class="sticky top-0 z-50 bg-royal-800 shadow-md dark:bg-royal-950">
+     otro lado. El header es azul rey: fondo royal-800 con textos
+     blancos. Sin "I" al lado del nombre (quitado 2026-11-07) y sin
+     interruptor de tema: el modo oscuro se quitó por completo a
+     petición de Patron, así que no hay botón ni script de tema. -->
+<header class="sticky top-0 z-50 bg-royal-800 shadow-md">
   <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
     <a href="/" class="flex shrink-0 items-center gap-2.5" aria-label="Ilumexa - Inicio">
-      <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-green-400 text-xl font-extrabold text-royal-950 shadow-sm">I</span>
       <span class="leading-none">
-        <span class="block text-2xl font-extrabold tracking-tight text-white">Ilumexa</span>
+        <span class="block text-2xl font-extrabold tracking-tight text-white">Ilumexa<span class="text-brand-green-400">.</span></span>
         <span class="mt-1 block text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-green-300">Iluminando a México</span>
       </span>
     </a>
@@ -19,39 +20,9 @@
       <a href="/services" class="rounded-full px-3 py-2 transition hover:bg-white/10 hover:text-white">Servicios</a>
       <a href="/contact" class="rounded-full bg-brand-green-400 px-4 py-2 font-semibold text-royal-950 shadow-sm transition hover:bg-brand-green-300">Contacto</a>
     </div>
-    <div class="flex items-center gap-2">
-      <div class="flex items-center gap-1 text-sm font-medium text-royal-100 md:hidden">
-        <a href="/products" class="rounded-full px-2 py-2 hover:text-white">Productos</a>
-        <a href="/contact" class="rounded-full px-2 py-2 hover:text-white">Contacto</a>
-      </div>
-      <!-- Interruptor de tema claro/oscuro: una pastilla con sol y luna
-           y una bolita que se desliza. Guarda la elección en
-           `ilumexa-theme` para que no se pierda al cambiar de página. -->
-      <button
-        id="theme-toggle"
-        type="button"
-        role="switch"
-        aria-checked="false"
-        aria-label="Cambiar entre modo claro y oscuro"
-        class="relative h-9 w-16 shrink-0 rounded-full bg-white/20 shadow-inner transition-colors hover:bg-white/30 dark:bg-white/10 dark:hover:bg-white/20"
-      >
-        <span class="pointer-events-none absolute inset-0 flex items-center justify-between px-2.5" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 text-amber-300">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 text-white">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
-          </svg>
-        </span>
-        <span class="absolute left-1 top-1 flex h-7 w-7 items-center justify-center rounded-full bg-white shadow transition-transform duration-300 dark:translate-x-7">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 text-amber-500 dark:hidden">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hidden h-4 w-4 text-royal-700 dark:block">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
-          </svg>
-        </span>
-      </button>
+    <div class="flex items-center gap-1 text-sm font-medium text-royal-100 md:hidden">
+      <a href="/products" class="rounded-full px-2 py-2 hover:text-white">Productos</a>
+      <a href="/contact" class="rounded-full px-2 py-2 hover:text-white">Contacto</a>
     </div>
   </nav>
   <!-- Navegación secundaria en móvil -->
@@ -60,22 +31,4 @@
     <a href="/about" class="rounded-full px-3 py-1 hover:text-white">Acerca de</a>
     <a href="/services" class="rounded-full px-3 py-1 hover:text-white">Servicios</a>
   </div>
-  <script>
-    const btn = document.getElementById('theme-toggle');
-    const root = document.documentElement;
-    const syncTheme = () => {
-      btn?.setAttribute(
-        'aria-checked',
-        root.classList.contains('dark') ? 'true' : 'false'
-      );
-    };
-    btn?.addEventListener('click', () => {
-      const dark = root.classList.toggle('dark');
-      try {
-        localStorage.setItem('ilumexa-theme', dark ? 'dark' : 'light');
-      } catch (e) {}
-      syncTheme();
-    });
-    syncTheme();
-  </script>
 </header>

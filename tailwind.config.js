@@ -1,7 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,ts,tsx}"],
-  darkMode: "class", // habilita el modo oscuro con clase
+  darkMode: "class", // el modo oscuro está desactivado: nada añade
+  // la clase `dark`, así que las variantes `dark:` no se aplican.
+  // Se quitó el interruptor de tema a petición de Patron (2026-11-07).
   theme: {
     extend: {
       colors: {

@@ -34,7 +34,7 @@ import Layout from '../layouts/Layout.astro';
           <h1 class="max-w-2xl text-5xl font-extrabold leading-tight tracking-tight text-white md:text-6xl">
             Ilumexa
           </h1>
-          <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-royal-100 md:text-xl">
+          <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white md:text-xl">
             Soluciones de iluminación pública, industrial, residencial y
             decorativa con marcas líderes.
           </p>
@@ -62,16 +62,16 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Video de Ilumexa: banda blanca sobre el fondo azul claro -->
-  <section class="border-b border-royal-100 bg-white dark:border-slate-800 dark:bg-slate-900">
+  <section class="border-b border-royal-100 bg-white">
     <div class="mx-auto max-w-4xl px-4 py-20 sm:px-6 md:py-24">
-    <p class="mb-2 text-center text-xs font-semibold uppercase tracking-[0.2em] text-brand-green-600 dark:text-brand-green-400">
+    <p class="mb-2 text-center text-xs font-semibold uppercase tracking-[0.2em] text-brand-green-600">
       Conoce Ilumexa
     </p>
-    <h2 class="text-center text-3xl font-bold tracking-tight text-royal-950 dark:text-white md:text-4xl">
+    <h2 class="text-center text-3xl font-bold tracking-tight text-royal-950 md:text-4xl">
       Ilumexa en video
     </h2>
     <div class="mx-auto mt-3 h-1 w-16 rounded-full bg-brand-green-400"></div>
-    <div class="mt-8 overflow-hidden rounded-2xl shadow-xl ring-1 ring-slate-200 dark:ring-slate-800">
+    <div class="mt-8 overflow-hidden rounded-2xl shadow-xl ring-1 ring-slate-200">
       <iframe
         src="https://www.youtube.com/embed/eVwipVw4YxI"
         title="Video de Ilumexa"
@@ -86,12 +86,12 @@ import Layout from '../layouts/Layout.astro';
   <!-- Carrusel de logos (duplicado: la segunda copia lleva aria-hidden
        para que la animación animate-scroll, que desplaza -50%, gire sin
        salto. No se cambió el orden ni las imágenes de la primera lista.) -->
-  <section class="border-b border-brand-green-100 bg-brand-green-50 py-20 dark:border-royal-900 dark:bg-royal-950">
+  <section class="border-b border-brand-green-100 bg-brand-green-50 py-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6">
-      <p class="mb-2 text-center text-xs font-semibold uppercase tracking-[0.2em] text-brand-green-700 dark:text-brand-green-300">
+      <p class="mb-2 text-center text-xs font-semibold uppercase tracking-[0.2em] text-brand-green-700">
         Con el respaldo de
       </p>
-      <h2 class="text-center text-3xl font-bold tracking-tight text-royal-950 dark:text-white">
+      <h2 class="text-center text-3xl font-bold tracking-tight text-royal-950">
         Marcas aliadas
       </h2>
       <div class="mx-auto mt-3 h-1 w-16 rounded-full bg-brand-green-400"></div>
@@ -125,7 +125,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
       </div>
-      <p class="mt-8 text-center text-sm text-slate-600 dark:text-slate-300">
+      <p class="mt-8 text-center text-sm text-slate-600">
         Pasa el cursor sobre el carrusel para pausarlo.
       </p>
     </div>
@@ -133,20 +133,21 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- Llamada a la acción: en claro (2026-11-07). Antes era fondo azul
        rey con texto blanco y a Patron no le gustaba; ahora el fondo es
-       verde claro y los textos son azul rey y gris oscuro. -->
-  <section class="bg-brand-green-50 px-4 py-20 text-center sm:px-6 md:py-24 dark:bg-slate-900">
+       verde claro y los textos son azul rey y gris oscuro. El botón es
+       verde claro con el texto en negro. -->
+  <section class="bg-brand-green-50 px-4 py-20 text-center sm:px-6 md:py-24">
     <div class="mx-auto max-w-3xl">
-      <h2 class="text-3xl font-bold tracking-tight text-royal-900 dark:text-white md:text-4xl">
+      <h2 class="text-3xl font-bold tracking-tight text-royal-900 md:text-4xl">
         Ilumina tus proyectos con nosotros
       </h2>
       <div class="mx-auto mt-3 h-1 w-16 rounded-full bg-brand-green-400"></div>
-      <p class="mx-auto mt-4 max-w-xl text-lg text-slate-600 dark:text-slate-300">
+      <p class="mx-auto mt-4 max-w-xl text-lg text-slate-600">
         Contáctanos para recibir asesoría personalizada en iluminación
         eficiente y moderna.
       </p>
       <a
         href="/contact"
-        class="mt-8 inline-block rounded-full bg-royal-700 px-8 py-3 font-semibold text-white shadow-lg transition hover:bg-royal-800"
+        class="mt-8 inline-block rounded-full bg-brand-green-400 px-8 py-3 font-semibold text-black shadow-lg transition hover:bg-brand-green-300"
       >
         Contáctanos
       </a>

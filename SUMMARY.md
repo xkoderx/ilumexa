@@ -345,3 +345,33 @@ tampoco se notaba que cambiaran.
    compilado de la v4; lo que no cambiaba era el footer, que no tenía
    variantes `dark:`, y el header, que cambiaba muy poco.) Los logos del
    carrusel no se tocaron: son imágenes y conservan su fondo.
+
+---
+
+# Versión 6 — Sin modo oscuro, sin "I", textos en blanco y botón negro (2026-11-07)
+
+Patron dijo que los colores se estaban haciendo un lío porque ni se
+mostraban, así que se simplificó todo:
+
+1. **Sin modo oscuro.** Se quitó el interruptor del header, su script y
+   el script de `<head>` que aplicaba el tema, y se borraron las 41
+   variantes `dark:` de todos los archivos `src/`. Ya no hay `dark` en
+   el HTML ni en el CSS compilado: el sitio tiene un solo tema, claro,
+   con header azul rey y footer verde. (En `tailwind.config.js` se dejó
+   `darkMode: "class"` con un comentario: como nada añade la clase
+   `dark`, el modo oscuro no se puede activar por accidente.)
+2. **Sin la "I" del header.** Se quitó el cuadrito con la "I"; el nombre
+   quedó solo en texto, "Ilumexa" en blanco con el punto verde.
+3. **Texto del hero en blanco.** El subtítulo "Soluciones de
+   iluminación pública, industrial, residencial y decorativa con marcas
+   líderes" pasó de `text-royal-100` a `text-white` sobre la tarjeta
+   oscura del hero.
+4. **Botón "Contáctanos" con texto negro.** En "Ilumina tus proyectos
+   con nosotros" (y en el CTA de Servicios, igual) el botón ahora es
+   verde claro con el texto en negro, para que se lea bien.
+
+**Nota para ver el sitio:** hay que correrlo con servidor (`npm run dev`
+o `npm run preview` dentro de la carpeta), no con doble clic al
+`index.html`, porque las rutas de estilos e imágenes son absolutas y con
+doble clic no cargan. Eso explica en parte que los colores "ni se
+mostraran".
