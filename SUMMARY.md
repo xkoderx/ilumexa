@@ -506,6 +506,45 @@ Cambios:
    en Layout.astro, clases en global.css), con respeto a
    `prefers-reduced-motion`. El carrusel de marcas NO se tocó.
 
-Estado: lista en local, build verificado (1 página). Pendiente de subir
-a la rama muse (textos por el conector y la foto nueva
-`public/images/avenida-noche.jpg` por la web de GitHub).
+---
+
+# Versión 12 — Sin texto blanco, header sticky con hamburguesa, parallax y fondos alternos (2026-11-07)
+
+Patron revisó la v11: le gusta mucho más, pero pidió pulir detalles.
+
+1. **Cero texto blanco.** Todo el texto es negro u oscuro: la tarjeta
+   del hero pasó a vidrio claro (`bg-white/85`) con degradado azul-verde
+   en el nombre y subtítulo gris oscuro; las píldoras, la flecha
+   "Desliza" y el crédito de la foto son píldoras claras; la banda de
+   cifras y la llamada a la acción son claras con números y textos
+   oscuros; la barra superior es azul muy claro con texto azul oscuro.
+   Verificado: cero `text-white` en el HTML compilado (ni siquiera los
+   iconos: los de los pasos y las tarjetas son azul rey y verde claro).
+2. **Header sticky.** El header blanco sigue al bajar (`sticky top-0`).
+   En móvil y tableta hay menú de hamburguesa animado: las 3 rayas se
+   convierten en X y el panel se despliega con animación; al pulsar un
+   enlace se cierra solo y la navegación sigue a su ancla.
+3. **Parallax en el carrusel.** La sección de marcas aliadas lleva de
+   fondo la foto de la avenida, fija al hacer scroll en escritorio, con
+   un velo claro encima. En táctil y pantallas pequeñas se desactiva.
+   El carrusel en sí NO se tocó (mismo orden, imágenes y animación).
+4. **El carrusel debajo del hero.** A petición de Patron, el carrusel de
+   marcas aliadas va justo debajo del hero y sustituye a la lista de
+   texto "Nuestros proveedores" (esa lista se quitó).
+5. **Sin numeración.** Se quitaron los números de los subtítulos de
+   sección, de las tarjetas de producto y servicio, y de los pasos (que
+   ahora llevan iconos: chat, rayo y check).
+6. **Sin redundancia.** Se quitaron de Nosotros la cuadrícula de ventajas
+   (todo eso ya está en los párrafos y en el hero), la de áreas (ya está
+   en el párrafo) y el enlace "Conoce más de Ilumexa en video" (el video
+   ya tiene su sección). Se quitaron las notas de "fichas técnicas
+   pendientes" y "detalle de servicios pendiente".
+7. **Fondos alternos azul rey / blanco.** Video en blanco, Quiénes somos
+   en azul, Catálogo en blanco, Cómo trabajamos en azul, Servicios en
+   blanco y Contacto en azul. El azul es un tono claro (royal-100) para
+   que todo el texto oscuro se siga leyendo bien, sin texto blanco.
+8. **Footer verde vida.** Fondo verde claro (brand-green-400) con todos
+   los textos en negro y la franja azul rey arriba.
+
+Estado: lista en local, build verificado (1 página, cero texto blanco).
+Pendiente de subir a la rama muse.

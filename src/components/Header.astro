@@ -2,23 +2,25 @@
      header a petición de Patron (2026-11-07): no se veía como el logo
      de la página. La imagen sigue en public/images por si se usa en
      otro lado. Header blanco con el nombre en negro (2026-11-07): el
-     texto blanco no se veía sobre el fondo blanco. No se queda fijo:
-     el header se queda arriba de la página y no sigue al bajar. -->
+     texto blanco no se veía sobre el fondo blanco. Sticky (v12, a
+     petición de Patron): el header sigue al bajar. En móvil y tableta
+     la navegación es un menú de hamburguesa animado (v12). -->
 <!-- Barra superior de contacto: teléfonos y correo verificados, para
-     un aspecto más profesional. -->
-<div class="bg-royal-950 text-xs text-royal-100">
+     un aspecto más profesional. Fondo claro con texto oscuro (v12:
+     ningún texto blanco en el sitio). -->
+<div class="bg-royal-50 text-xs text-royal-800">
   <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-6 gap-y-1 px-4 py-2 sm:px-6">
     <p class="flex flex-wrap items-center gap-x-4 gap-y-1">
-      <a href="tel:56148172" class="hover:text-white">☎ 5614-8172</a>
-      <a href="tel:5514860549" class="hover:text-white">☎ 551486-0549</a>
-      <a href="mailto:gop.ilumex@gmail.com" class="hidden hover:text-white sm:inline">✉ gop.ilumex@gmail.com</a>
+      <a href="tel:56148172" class="font-medium hover:text-royal-950 hover:underline">☎ 5614-8172</a>
+      <a href="tel:5514860549" class="font-medium hover:text-royal-950 hover:underline">☎ 551486-0549</a>
+      <a href="mailto:gop.ilumex@gmail.com" class="hidden font-medium hover:text-royal-950 hover:underline sm:inline">✉ gop.ilumex@gmail.com</a>
     </p>
-    <p class="hidden font-semibold uppercase tracking-[0.18em] text-brand-green-300 md:block">
+    <p class="hidden font-semibold uppercase tracking-[0.18em] text-brand-green-700 md:block">
       Iluminando a México e Innovando
     </p>
   </div>
 </div>
-<header class="border-b border-royal-100 bg-white shadow-sm">
+<header id="header-principal" class="sticky top-0 z-50 border-b border-royal-100 bg-white/95 shadow-sm backdrop-blur">
   <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
     <a href="#inicio" class="flex shrink-0 items-center gap-2.5" aria-label="Ilumexa - Inicio">
       <span class="leading-none">
@@ -26,22 +28,59 @@
         <span class="mt-1 block text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-green-700">Iluminando a México</span>
       </span>
     </a>
-    <div class="hidden items-center gap-1 text-sm font-medium text-royal-800 md:flex">
+    <!-- Navegación de escritorio -->
+    <div class="hidden items-center gap-1 text-sm font-medium text-royal-800 lg:flex">
       <a href="#inicio" class="rounded-full px-3 py-2 transition hover:bg-royal-50 hover:text-royal-900">Inicio</a>
       <a href="#nosotros" class="rounded-full px-3 py-2 transition hover:bg-royal-50 hover:text-royal-900">Acerca de</a>
       <a href="#productos" class="rounded-full px-3 py-2 transition hover:bg-royal-50 hover:text-royal-900">Productos</a>
       <a href="#servicios" class="rounded-full px-3 py-2 transition hover:bg-royal-50 hover:text-royal-900">Servicios</a>
       <a href="#contacto" class="rounded-full bg-brand-green-400 px-4 py-2 font-semibold text-royal-950 shadow-sm transition hover:bg-brand-green-300">Contacto</a>
     </div>
-    <div class="flex items-center gap-1 text-sm font-medium text-royal-800 md:hidden">
-      <a href="#productos" class="rounded-full px-2 py-2 hover:text-royal-900">Productos</a>
-      <a href="#contacto" class="rounded-full px-2 py-2 hover:text-royal-900">Contacto</a>
-    </div>
+    <!-- Botón hamburguesa (móvil y tableta): las 3 rayas se animan
+         a una X al abrir; lo anima el CSS de global.css con la clase
+         .menu-abierto del header. -->
+    <button
+      id="boton-menu"
+      type="button"
+      class="flex h-11 w-11 flex-col items-center justify-center gap-[5px] rounded-full p-2 transition hover:bg-royal-50 lg:hidden"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="menu-movil"
+    >
+      <span class="hamburguesa-linea"></span>
+      <span class="hamburguesa-linea"></span>
+      <span class="hamburguesa-linea"></span>
+    </button>
   </nav>
-  <!-- Navegación secundaria en móvil -->
-  <div class="flex items-center gap-1 overflow-x-auto border-t border-royal-100 px-4 py-2 text-sm font-medium text-royal-800 md:hidden">
-    <a href="#inicio" class="rounded-full px-3 py-1 hover:text-royal-900">Inicio</a>
-    <a href="#nosotros" class="rounded-full px-3 py-1 hover:text-royal-900">Acerca de</a>
-    <a href="#servicios" class="rounded-full px-3 py-1 hover:text-royal-900">Servicios</a>
+  <!-- Menú móvil y tableta: panel desplegable animado (max-height +
+       opacidad, ver global.css). Los enlaces cierran el menú al pulsar. -->
+  <div id="menu-movil" class="overflow-hidden border-t border-royal-100 lg:hidden">
+    <nav class="flex flex-col gap-1 px-4 py-3 text-base font-medium text-royal-800 sm:px-6" aria-label="Menú principal">
+      <a href="#inicio" class="rounded-xl px-3 py-2.5 transition hover:bg-royal-50 hover:text-royal-900">Inicio</a>
+      <a href="#nosotros" class="rounded-xl px-3 py-2.5 transition hover:bg-royal-50 hover:text-royal-900">Acerca de</a>
+      <a href="#productos" class="rounded-xl px-3 py-2.5 transition hover:bg-royal-50 hover:text-royal-900">Productos</a>
+      <a href="#servicios" class="rounded-xl px-3 py-2.5 transition hover:bg-royal-50 hover:text-royal-900">Servicios</a>
+      <a href="#contacto" class="mt-1 rounded-full bg-brand-green-400 px-4 py-2.5 text-center font-semibold text-royal-950 shadow-sm transition hover:bg-brand-green-300">Contacto</a>
+    </nav>
   </div>
+  <script>
+    const header = document.getElementById('header-principal');
+    const boton = document.getElementById('boton-menu');
+    const menu = document.getElementById('menu-movil');
+    const abrir = () => {
+      const abierto = header.classList.toggle('menu-abierto');
+      boton.setAttribute('aria-expanded', String(abierto));
+      boton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+    };
+    boton.addEventListener('click', abrir);
+    // Al pulsar un enlace, el menú se cierra solo y la navegación
+    // sigue a su ancla sin desorientar al usuario.
+    menu.querySelectorAll('a').forEach((enlace) => {
+      enlace.addEventListener('click', () => {
+        header.classList.remove('menu-abierto');
+        boton.setAttribute('aria-expanded', 'false');
+        boton.setAttribute('aria-label', 'Abrir menú');
+      });
+    });
+  </script>
 </header>

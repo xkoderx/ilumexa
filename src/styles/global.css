@@ -51,6 +51,54 @@ html {
   animation: float-slow 5s ease-in-out infinite;
 }
 
+/* Menú hamburguesa animado (v12): las 3 rayas se convierten en X
+   cuando el header lleva .menu-abierto; el panel se despliega con
+   max-height y opacidad. */
+#menu-movil {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.3s ease;
+}
+
+.menu-abierto #menu-movil {
+  max-height: 26rem;
+  opacity: 1;
+}
+
+.hamburguesa-linea {
+  display: block;
+  height: 2px;
+  width: 22px;
+  border-radius: 2px;
+  background: #172554;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+.menu-abierto .hamburguesa-linea:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-abierto .hamburguesa-linea:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-abierto .hamburguesa-linea:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Parallax del carrusel (v12): el fondo se mueve más lento que el
+   contenido al hacer scroll. En táctil y pantallas pequeñas se
+   desactiva para no dar tirones. */
+.parallax {
+  background-attachment: fixed;
+}
+
+@media (hover: none), (max-width: 1023px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
 /* Reveal al hacer scroll: las secciones entran con un fundido
    y un leve ascenso cuando aparecen en pantalla (lo activa el
    script de Layout.astro con IntersectionObserver). */
