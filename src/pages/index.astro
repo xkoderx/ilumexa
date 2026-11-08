@@ -1,6 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+// Base del sitio (v15): en GitHub Pages el sitio vive en /ilumexa/, no en
+// la raíz, así que las imágenes usan import.meta.env.BASE_URL para que
+// las rutas salgan con /ilumexa/ delante. En local es '/'.
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
 // Contenido verificado del sitio oficial (iluminandomexico.com.mx).
 // Landing de una sola página (2026-11-07): todo el contenido de las
 // antiguas páginas Acerca de, Productos, Servicios y Contacto vive aquí
@@ -99,7 +104,7 @@ const services = [
            scroll en escritorio y el contenido se desliza encima. En
            táctil y pantallas pequeñas el fondo se mueve normal (ver
            global.css). -->
-      <div class="parallax absolute inset-0 bg-[url('/images/calle-iluminada.jpg')] bg-cover bg-center" role="img" aria-label="Carretera iluminada de noche con farolas encendidas entre la niebla"></div>
+      <div class="parallax absolute inset-0 bg-cover bg-center" style={`background-image: url(${base}images/calle-iluminada.jpg)`} role="img" aria-label="Carretera iluminada de noche con farolas encendidas entre la niebla"></div>
       <div class="absolute inset-0">
         <div class="absolute inset-0 bg-gradient-to-r from-royal-950/70 via-royal-950/40 to-royal-950/20"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-royal-950/70 via-transparent to-transparent"></div>
@@ -192,30 +197,30 @@ const services = [
       <div class="relative mt-10 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
         <div class="flex w-max animate-scroll">
           <div class="flex items-center space-x-12 pr-12">
-            <img src="/images/tork.png" alt="Tork" class="h-16" />
-            <img src="/images/osram.png" alt="OSRAM" class="h-16" />
-            <img src="/images/forlexa.jpg" alt="forlexa" class="h-16" />
-            <img src="/images/philips.png" alt="Philips" class="h-16" />
-            <img src="/images/tecnolight.png" alt="Tecno Light" class="h-16" />
-            <img src="/images/amg.png" alt="AMG" class="h-16" />
-            <img src="/images/forlighting.png" alt="Forlighting" class="h-16" />
-            <img src="/images/luma.jpg" alt="Luma" class="h-16" />
-            <img src="/images/lumicom.png" alt="Lumicom" class="h-16" />
-            <img src="/images/magg.png" alt="MAGG" class="h-16" />
-            <img src="/images/sola-basic.png" alt="Sola Basic" class="h-16" />
+            <img src={base + "images/tork.png"} alt="Tork" class="h-16" />
+            <img src={base + "images/osram.png"} alt="OSRAM" class="h-16" />
+            <img src={base + "images/forlexa.jpg"} alt="forlexa" class="h-16" />
+            <img src={base + "images/philips.png"} alt="Philips" class="h-16" />
+            <img src={base + "images/tecnolight.png"} alt="Tecno Light" class="h-16" />
+            <img src={base + "images/amg.png"} alt="AMG" class="h-16" />
+            <img src={base + "images/forlighting.png"} alt="Forlighting" class="h-16" />
+            <img src={base + "images/luma.jpg"} alt="Luma" class="h-16" />
+            <img src={base + "images/lumicom.png"} alt="Lumicom" class="h-16" />
+            <img src={base + "images/magg.png"} alt="MAGG" class="h-16" />
+            <img src={base + "images/sola-basic.png"} alt="Sola Basic" class="h-16" />
           </div>
           <div class="flex items-center space-x-12 pr-12" aria-hidden="true">
-            <img src="/images/tork.png" alt="" class="h-16" />
-            <img src="/images/osram.png" alt="" class="h-16" />
-            <img src="/images/forlexa.jpg" alt="" class="h-16" />
-            <img src="/images/philips.png" alt="" class="h-16" />
-            <img src="/images/tecnolight.png" alt="" class="h-16" />
-            <img src="/images/amg.png" alt="" class="h-16" />
-            <img src="/images/forlighting.png" alt="" class="h-16" />
-            <img src="/images/luma.jpg" alt="" class="h-16" />
-            <img src="/images/lumicom.png" alt="" class="h-16" />
-            <img src="/images/magg.png" alt="" class="h-16" />
-            <img src="/images/sola-basic.png" alt="" class="h-16" />
+            <img src={base + "images/tork.png"} alt="" class="h-16" />
+            <img src={base + "images/osram.png"} alt="" class="h-16" />
+            <img src={base + "images/forlexa.jpg"} alt="" class="h-16" />
+            <img src={base + "images/philips.png"} alt="" class="h-16" />
+            <img src={base + "images/tecnolight.png"} alt="" class="h-16" />
+            <img src={base + "images/amg.png"} alt="" class="h-16" />
+            <img src={base + "images/forlighting.png"} alt="" class="h-16" />
+            <img src={base + "images/luma.jpg"} alt="" class="h-16" />
+            <img src={base + "images/lumicom.png"} alt="" class="h-16" />
+            <img src={base + "images/magg.png"} alt="" class="h-16" />
+            <img src={base + "images/sola-basic.png"} alt="" class="h-16" />
           </div>
         </div>
       </div>
@@ -300,7 +305,7 @@ const services = [
       <div class="relative">
         <div class="overflow-hidden rounded-3xl shadow-2xl ring-1 ring-slate-200">
           <img
-            src="/images/avenida-noche.jpg"
+            src={base + "images/avenida-noche.jpg"}
             alt="Avenida iluminada de noche con farolas y cielo oscuro"
             class="aspect-[4/3] w-full object-cover transition duration-700 hover:scale-105"
             loading="lazy"

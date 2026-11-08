@@ -612,3 +612,37 @@ Estado: COMPLETA en la rama muse — capturas en commit 70f2d76 y README
 nuevo en commit 05e3eb6 (verificado leyendo la rama). Proyecto pausado
 por ahora: la tiendita queda para después. Lo siguiente es el proyecto
 del estudio de tatuajes, cuando Patron pase el repositorio.
+
+---
+
+# Versión 15 — Estilos en GitHub Pages: base /ilumexa (2026-11-07)
+
+Patron publicó en GitHub Pages (rama main, carpeta docs) y la página
+cargaba sin estilos. Causa encontrada y comprobada: el sitio vive en
+https://xkoderx.github.io/ilumexa/, pero Astro generaba rutas desde la
+raíz del dominio (/_astro/index.[hash].css, /images/...), que en Pages
+dan 404. Las imágenes tampoco cargaban, por la misma razón. Es el
+problema clásico de Astro en Pages cuando no se configura `base`.
+
+Arreglo:
+1. `astro.config.mjs`: `site: 'https://xkoderx.github.io'` y
+   `base: '/ilumexa'`. Astro ya pone /ilumexa/ delante de los archivos
+   compilados (/_astro/...).
+2. `src/pages/index.astro`: las 23 imágenes de `public/images` (las 20
+   del carrusel, la de Nosotros y el fondo del hero) ahora usan
+   `import.meta.env.BASE_URL`, porque Astro no le pone la base a las
+   rutas escritas a mano en el HTML. El fondo del hero pasó a un
+   `style` en línea para que el parallax siga igual.
+3. `src/layouts/Layout.astro`: se agregó el favicon con la base
+   (`/ilumexa/favicon.svg`).
+
+Verificado en el build local: el CSS sale como
+`/ilumexa/_astro/index.[hash].css`, las imágenes como
+`/ilumexa/images/...` y el hero como
+`background-image: url(/ilumexa/images/calle-iluminada.jpg)`.
+Ojo: con `base`, el servidor de desarrollo ahora sirve el sitio en
+http://localhost:4321/ilumexa/ (la raíz / da 404).
+
+Para publicar el arreglo: fusionar muse a main, correr `npm run build`
+y copiar el contenido de `dist/` a la carpeta `docs/` de main, como
+antes. Con eso los estilos y las fotos ya cargan en Pages.
