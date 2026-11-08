@@ -646,3 +646,26 @@ http://localhost:4321/ilumexa/ (la raíz / da 404).
 Para publicar el arreglo: fusionar muse a main, correr `npm run build`
 y copiar el contenido de `dist/` a la carpeta `docs/` de main, como
 antes. Con eso los estilos y las fotos ya cargan en Pages.
+
+---
+
+# Versión 15 (seguimiento) — Falta el archivo .nojekyll (2026-11-07)
+
+Tras fusionar y republicar, el sitio en vivo seguía mostrando la
+versión vieja: GitHub Pages aún no había republicado (también se vio
+un 404 transitorio de Pages entre las 19:36 y las 19:38, señal de un
+redespliegue en curso). Pero la revisión encontró algo más importante:
+en `main/docs/` no existe el archivo `.nojekyll`. Sin él, Jekyll (el
+procesador que Pages usa por defecto) ignora las carpetas que empiezan
+con guion bajo, como `_astro`, así que el CSS seguiría dando 404
+incluso después de que Pages republique.
+
+Arreglo: se añadió un archivo vacío `public/.nojekyll` en la rama muse
+(commit e1c5794). Astro lo copia tal cual a `dist/` en cada build, así
+que al copiar `dist/` a `docs/` viaja con el resto y Pages ya no
+ignora `_astro`. Verificado en el build local (`dist/.nojekyll`
+existe) y en la rama.
+
+Para publicar este arreglo: fusionar muse a main, correr
+`npm run build` y copiar el contenido de `dist/` a `docs/`, como
+antes. Después de eso los estilos ya deben cargar.
