@@ -607,3 +607,8 @@ Para cerrar el proyecto por ahora:
    información y qué sigue. Las capturas van arriba del todo para que
    cualquiera que entre al repo vea cómo se ve el sitio. La tienda
    queda para después.
+
+Estado: COMPLETA en la rama muse — capturas en commit 70f2d76 y README
+nuevo en commit 05e3eb6 (verificado leyendo la rama). Proyecto pausado
+por ahora: la tiendita queda para después. Lo siguiente es el proyecto
+del estudio de tatuajes, cuando Patron pase el repositorio.
