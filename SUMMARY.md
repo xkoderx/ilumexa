@@ -546,5 +546,42 @@ Patron revisó la v11: le gusta mucho más, pero pidió pulir detalles.
 8. **Footer verde vida.** Fondo verde claro (brand-green-400) con todos
    los textos en negro y la franja azul rey arriba.
 
-Estado: lista en local, build verificado (1 página, cero texto blanco).
-Pendiente de subir a la rama muse.
+Estado: COMPLETA en la rama muse, commit 37fc507 (verificado leyendo
+la rama: carrusel, bandas azules, sin numeración, sin texto blanco,
+header sticky con hamburguesa y footer verde vida). Siguiente paso de
+Patron: revisar, fusionar muse a main y publicar con GitHub Pages;
+después, la tiendita.
+
+---
+
+# Versión 13 — Hero anterior con parallax, carrusel en blanco y colores que sí se ven (2026-11-07)
+
+Patron aclaró lo que quiso decir:
+
+1. **El hero anterior estaba perfecto.** Se restauró la tarjeta oscura
+   de la v11 (textos blancos sobre la foto) y solo se le añadió el
+   **parallax**: la foto del hero ahora queda fija al hacer scroll en
+   escritorio y el contenido se desliza encima. El "cero texto blanco"
+   de la v12 no aplicaba al hero.
+2. **El carrusel en fondo blanco.** La sección de marcas aliadas volvió
+   a `bg-white` (así estaba bien) y se le quitó el parallax y la foto
+   de fondo. El carrusel en sí no se tocó.
+3. **Textos quitados.** Se borraron "Categorías de productos de Ilumexa,
+   según el menú del sitio oficial" y "Servicios de Ilumexa, según el
+   menú del sitio oficial".
+4. **Los colores no se veían — causa encontrada.** El azul de las
+   secciones era `royal-100` (#DBEAFE), tan pálido que parece blanco;
+   por eso Patron nunca lo vio. Ahora las secciones azules usan
+   `royal-300` (#93C5FD, azul claramente visible) con textos oscuros:
+   Nosotros, Cómo trabajamos y Contacto. La banda de cifras es
+   `royal-200` y la llamada a la acción `brand-green-200` (verde
+   claro visible). El footer sigue en verde vida `brand-green-400`
+   (#4ADE80), que ya era un verde fuerte. Verificado en el CSS
+   compilado: las clases existen con sus valores correctos.
+5. **Ojo al revisar:** para ver la v13 hay que traer lo último de la
+   rama `muse` (`git pull`), reiniciar `npm run dev` y recargar la
+   página sin caché (Ctrl + Shift + R), porque una copia local vieja
+   no muestra los cambios nuevos.
+
+Estado: lista en local, build verificado (1 página). Pendiente de subir
+a la rama muse.
