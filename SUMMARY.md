@@ -583,5 +583,27 @@ Patron aclaró lo que quiso decir:
    página sin caché (Ctrl + Shift + R), porque una copia local vieja
    no muestra los cambios nuevos.
 
-Estado: lista en local, build verificado (1 página). Pendiente de subir
-a la rama muse.
+Estado: COMPLETA en la rama muse, commit aa33e00 (verificado leyendo
+la rama: parallax en el hero con tarjeta oscura, carrusel en blanco,
+sin los textos "según el menú", royal-300 en secciones, CTA verde-200).
+Siguiente paso de Patron: revisar, fusionar muse a main y publicar
+con GitHub Pages; después, la tiendita.
+
+---
+
+# Versión 14 — Capturas en el README y README menos técnico (2026-11-07)
+
+Para cerrar el proyecto por ahora:
+
+1. **Capturas de pantalla.** Se tomó la página completa en escritorio
+   (1280 px) y en celular (390 px) con Chromium sin interfaz gráfica,
+   recorriendo la página para que aparecieran todas las secciones. Los
+   archivos quedaron en `screenshots/escritorio.png` y
+   `screenshots/movil.png` (commit 70f2d76, subidos por la web de
+   GitHub; la primera subida falló por un error de concesión de
+   archivo y funcionó al re-adjuntar las imágenes).
+2. **README menos técnico.** Reescrito en palabras sencillas: qué es la
+   página, qué tiene, cómo verla en tu computadora, de dónde salió la
+   información y qué sigue. Las capturas van arriba del todo para que
+   cualquiera que entre al repo vea cómo se ve el sitio. La tienda
+   queda para después.

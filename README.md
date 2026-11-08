@@ -1,140 +1,97 @@
 # Ilumexa — Iluminando México
 
-Sitio web moderno de **Ilumexa**, empresa dedicada a la fabricación y
-comercialización de productos para alumbrado público, industrial, residencial
-y decorativo, así como a la comercialización de accesorios eléctricos.
+La nueva página web de **Ilumexa**, empresa mexicana dedicada a la
+fabricación y comercialización de productos de iluminación: alumbrado
+público, industrial, residencial y decorativo, además de accesorios
+eléctricos.
 
-El sitio está construido con [Astro](https://astro.build) y
-[Tailwind CSS](https://tailwindcss.com).
+Es la versión moderna del sitio oficial
+[iluminandomexico.com.mx](https://iluminandomexico.com.mx), con la misma
+información, pero con un diseño actual, rápido y que se ve bien en
+computadora, tableta y celular.
 
-## Stack
+## Cómo se ve
 
-- Astro 5.16.15
-- Tailwind CSS 3.4.19 (`@astrojs/tailwind` 6.0.2)
-- Node.js (se recomienda una versión LTS reciente)
+Vista en computadora:
 
-## Cómo correrlo
+![Vista de la página de Ilumexa en computadora](screenshots/escritorio.png)
+
+Vista en celular:
+
+![Vista de la página de Ilumexa en celular](screenshots/movil.png)
+
+## Qué tiene la página
+
+Todo está en una sola página, que se recorre de arriba a abajo:
+
+- **Portada:** foto de una calle iluminada de noche, con el nombre de la
+  empresa y sus ventajas principales. La foto tiene un efecto que la
+  deja fija mientras bajas por la página.
+- **Marcas aliadas:** un carrusel con los logotipos de las marcas con las
+  que trabaja Ilumexa (TORK, OSRAM, Philips, entre otras).
+- **En números:** 12 categorías de productos, 2 servicios y 10 marcas
+  líderes.
+- **Video:** el video oficial de Ilumexa.
+- **Quiénes somos:** la historia y el compromiso de la empresa.
+- **Catálogo:** las 12 categorías de productos.
+- **Cómo trabajamos:** asesoría, instalación y mantenimiento, en 3 pasos.
+- **Servicios:** mantenimiento e instalación, y asesoría de proyectos.
+- **Contacto:** dirección, teléfonos, correos y un formulario que abre tu
+  correo ya redactado para Ilumexa.
+
+En el celular el menú se convierte en un botón de hamburguesa animado
+que se abre y se cierra sin perderte.
+
+## Cómo verla en tu computadora
+
+Necesitas tener instalado [Node.js](https://nodejs.org) (versión LTS) y
+luego, desde la carpeta del proyecto:
 
 ```sh
-npm install
-npm run dev      # servidor de desarrollo en http://localhost:4321
-npm run build    # compila el sitio a ./dist/
-npm run preview  # vista previa local de la compilación
+npm install   # instala las dependencias (solo la primera vez)
+npm run dev   # abre la página en http://localhost:4321
 ```
 
-## Estructura
+Para hacer la versión final lista para publicar:
 
-```text
-/
-├── public/
-│   ├── favicon.ico
-│   ├── favicon.svg
-│   └── images/            # Foto del hero y logos de marcas aliadas
-├── src/
-│   ├── components/
-│   │   ├── Header.astro
-│   │   └── Footer.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   ├── pages/
-│   │   └── index.astro    # Landing de una sola página
-│   └── styles/
-│       └── global.css     # Tailwind + animación del carrusel
-├── astro.config.mjs
-├── package.json
-└── tailwind.config.js     # Paleta azul rey y verde claro
+```sh
+npm run build    # genera la carpeta dist/
+npm run preview  # vista previa de esa versión final
 ```
 
-## Landing de una sola página
+## De dónde salió la información
 
-Todo el sitio vive en `/` (`index.astro`), en secciones con ancla. El
-header no redirecciona a otras páginas, solo baja a cada sección:
+Todo el contenido se tomó del sitio oficial de Ilumexa
+(iluminandomexico.com.mx), revisado el 6 de noviembre de 2026. En esa
+fecha solo cargaba su página de inicio, así que aquí solo se usa lo que
+se pudo comprobar ahí: el texto de la empresa, los nombres de las
+categorías y servicios, las marcas y los datos de contacto. No se
+inventó ningún producto, precio ni dato.
 
-- `#inicio` — Hero con foto de alumbrado público, video de YouTube
-  integrado y carrusel de marcas aliadas.
-- `#nosotros` — Quiénes somos, proveedores y ventajas competitivas.
-- `#productos` — Las 12 categorías de productos del sitio oficial.
-- `#servicios` — Mantenimiento e Instalación, y Asesoría de Proyectos.
-- `#contacto` — Dirección, contactos y correos. El formulario abre el
-  correo del visitante ya redactado para Ilumexa (mailto, sin backend).
+## Créditos de las fotos
 
-## Diseño
+- Foto de la portada: [Darya Grey_Owl / Pexels](https://www.pexels.com/photo/lighted-street-lights-between-a-highway-12348285/)
+  (carretera con farolas encendidas de noche, entre la niebla).
+- Foto de "Quiénes somos": [Vova Kras / Pexels](https://www.pexels.com/photo/black-asphalt-road-during-night-time-10313578/)
+  (avenida de noche).
+- Los logotipos son de las marcas aliadas de Ilumexa.
 
-Paleta del logotipo de la empresa: **azul rey** (`royal`, `#1e3a8a` /
-`#1d4ed8`) como color principal y **verde claro** (`brand-green`,
-`#86efac` / `#4ade80`) como acento, definidos en `tailwind.config.js`.
-Un solo tema claro, sin modo oscuro. Header blanco con el nombre en
-negro (sin logotipo en imagen y sin sticky) y footer verde.
-
-- **Logotipo:** el banner oficial (`public/images/logo-ilumexa.jpg`,
-  960x219) ya no se muestra en el header ni en el footer; el nombre va
-  en texto. La imagen sigue guardada en `public/images/`.
-- **Hero:** foto de stock de Pexels (Darya Grey_Owl, carretera con
-  farolas encendidas de noche entre la niebla, 2400x1600 px, licencia
-  gratuita), a todo el ancho, casi toda la altura de la pantalla. Es un
-  slider de una sola imagen, sin rotación automática, con zoom lento
-  (Ken Burns), brillos decorativos, los textos en blanco dentro de una
-  tarjeta azul rey semitransparente y centrada, entrada escalonada y
-  debajo tres píldoras con las ventajas (asesoría, ahorro de energía,
-  marcas líderes). Sustituye a la foto del sitio oficial (`images/4a.png`,
-  500x250 px), que se veía pixelada.
-- **Banda de cifras:** 12 categorías, 2 servicios y 10 marcas líderes
-  (números verificados) sobre degradado azul rey.
-- **Nosotros:** dos columnas con segunda foto de stock (Vova Kras,
-  avenida de noche, 2400x1800 px, `public/images/avenida-noche.jpg`) y
-  tarjeta flotante con el dato de las 10 marcas.
-- **Cómo trabajamos:** 3 pasos (Asesoría → Instalación →
-  Mantenimiento) sacados de los 2 servicios verificados.
-- **Animaciones:** reveal al hacer scroll en todas las secciones
-  (IntersectionObserver en `Layout.astro`, clases en `global.css`).
-- **Video:** iframe de YouTube (`https://www.youtube.com/embed/eVwipVw4YxI`)
-  con `aspect-video` y bordes redondeados.
-- **Carrusel de logos:** lista duplicada (segunda copia con
-  `aria-hidden="true"`) para que la animación `animate-scroll`
-  (`translateX -50%`) gire sin salto. Gira siempre, sin pausa al pasar
-  el mouse. La primera lista conserva el orden y las imágenes originales.
-- **Corrección de build:** `Layout.astro` importa `global.css` en vez de
-  enlazarlo con `<link>`, para que la animación del carrusel y los estilos
-  personalizados también estén en la compilación de producción
-  (GitHub Pages), no solo en desarrollo.
-
-## Fuente de la información
-
-El contenido de este sitio se basa en la información verificada del sitio
-oficial de Ilumexa, [iluminandomexico.com.mx](https://iluminandomexico.com.mx)
-(Joomla), revisado el 2026-11-06.
-
-> **Nota:** en esa fecha solo cargaba la página de inicio del sitio oficial;
-> sus páginas de Productos, Servicios y Novedades devolvían 404. Por eso aquí
-> solo se usan los datos verificables de la página de inicio: el texto de
-> Acerca de, los nombres de las categorías de productos y de los servicios,
-> las marcas proveedoras y los datos de contacto del pie de página.
-
-## Pendiente
-
-- **Catálogo detallado y fichas técnicas:** las fichas de producto no se
-  pudieron verificar porque las páginas correspondientes del sitio oficial
-  devuelven 404. No se inventaron productos, precios ni especificaciones.
-  Falta que el negocio comparta su catálogo o fichas para completar cada
-  categoría.
-- **Vigencia de los teléfonos:** los números publicados son los del pie
-  del sitio oficial sin Nextel: Guillermina Osorno 5614-8172 y Efraín
-  Quintero 551486-0549. El número 5654-4906 quedó fuera pendiente de
-  confirmar, porque en el sitio oficial aparece junto a una línea Nextel.
-- **Formulario de contacto:** ya abre el correo del visitante redactado
-  (mailto a gop.ilumex@gmail.com con copia a gop_ilumex@hotmail.com). Un
-  envío silencioso desde la web requeriría un backend o un servicio como
-  Formspree / Netlify Forms.
-- **Foto del hero:** la foto original es de solo 500x250 px, así que a
-  todo el ancho puede verse algo suave en pantallas grandes. Una versión
-  de mayor resolución mejoraría el hero.
-- **Carrusel de logos:** duplicado en la versión 2 con la aprobación de
-  Gepeto, para que gire sin salto; desde la versión 8 gira siempre, sin
-  pausa al pasar el mouse.
-
-## Contacto (verificado en el sitio oficial)
+## Contacto de Ilumexa
 
 - Dirección: Raymundo Montoya Mz. 22 Lt. 7, Col. Benito Juárez,
   C.P. 08930, Iztacalco, México D.F.
-- Contactos: Guillermina Osorno, Efraín Quintero.
-- Correos: gop_ilumex@hotmail.com y gop.ilumex@gmail.com.
+- Guillermina Osorno: 5614-8172
+- Efraín Quintero: 551486-0549
+- Correos: gop_ilumex@hotmail.com y gop.ilumex@gmail.com
+
+## Qué sigue
+
+- **La tiendita:** más adelante se agregará una pequeña tienda en línea
+  para vender los productos desde la página.
+- **Catálogo detallado:** las fichas técnicas de cada producto están
+  pendientes de que el negocio comparta su catálogo, porque las páginas
+  del sitio oficial no cargaban.
+
+---
+
+*Hecho con Astro y Tailwind CSS.*
